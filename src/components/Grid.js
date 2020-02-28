@@ -4,7 +4,7 @@ import Cell from './Cell';
 export default class Grid extends Component {
   state = {
     cells: new Array(100).fill(0),
-    highlight: false
+    flashCells: new Array(100).fill(false)
   };
 
   renderCell(i) {
@@ -12,18 +12,18 @@ export default class Grid extends Component {
       <Cell
         count={this.state.cells[i]}
         onClick={() => this.onClick(i)}
-        highlight={this.state.highlight}
+        flashCell={this.state.flashCells[i]}
       />
     );
   }
 
-  handleClick = () => {};
-
   onClick = i => {
     let newCells = [...this.state.cells];
+    let newFlashCells = [...this.state.flashCells];
     if (i >= 0 && i <= 9) {
       for (let index = 0; index < 10; index++) {
         newCells[index] += 1;
+        newFlashCells[index] = true;
       }
       if (i === 0) {
         newCells[i + 10] += 1;
@@ -35,9 +35,22 @@ export default class Grid extends Component {
         newCells[i + 70] += 1;
         newCells[i + 80] += 1;
         newCells[i + 90] += 1;
+        newFlashCells[i + 10] = true;
+        newFlashCells[i + 20] = true;
+        newFlashCells[i + 30] = true;
+        newFlashCells[i + 40] = true;
+        newFlashCells[i + 50] = true;
+        newFlashCells[i + 60] = true;
+        newFlashCells[i + 70] = true;
+        newFlashCells[i + 80] = true;
+        newFlashCells[i + 90] = true;
         this.setState({
-          cells: newCells
+          cells: newCells,
+          flashCells: newFlashCells
         });
+        setTimeout(() => {
+          this.setState({ flashCells: new Array(100).fill(false) });
+        }, 100);
       } else if (i === 1) {
         newCells[i + 10] += 1;
         newCells[i + 20] += 1;
@@ -48,9 +61,22 @@ export default class Grid extends Component {
         newCells[i + 70] += 1;
         newCells[i + 80] += 1;
         newCells[i + 90] += 1;
+        newFlashCells[i + 10] = true;
+        newFlashCells[i + 20] = true;
+        newFlashCells[i + 30] = true;
+        newFlashCells[i + 40] = true;
+        newFlashCells[i + 50] = true;
+        newFlashCells[i + 60] = true;
+        newFlashCells[i + 70] = true;
+        newFlashCells[i + 80] = true;
+        newFlashCells[i + 90] = true;
         this.setState({
-          cells: newCells
+          cells: newCells,
+          flashCells: newFlashCells
         });
+        setTimeout(() => {
+          this.setState({ flashCells: new Array(100).fill(false) });
+        }, 100);
       } else if (i === 2) {
         newCells[i + 10] += 1;
         newCells[i + 20] += 1;
@@ -61,9 +87,22 @@ export default class Grid extends Component {
         newCells[i + 70] += 1;
         newCells[i + 80] += 1;
         newCells[i + 90] += 1;
+        newFlashCells[i + 10] = true;
+        newFlashCells[i + 20] = true;
+        newFlashCells[i + 30] = true;
+        newFlashCells[i + 40] = true;
+        newFlashCells[i + 50] = true;
+        newFlashCells[i + 60] = true;
+        newFlashCells[i + 70] = true;
+        newFlashCells[i + 80] = true;
+        newFlashCells[i + 90] = true;
         this.setState({
-          cells: newCells
+          cells: newCells,
+          flashCells: newFlashCells
         });
+        setTimeout(() => {
+          this.setState({ flashCells: new Array(100).fill(false) });
+        }, 100);
       } else if (i === 3) {
         newCells[i + 10] += 1;
         newCells[i + 20] += 1;
@@ -74,9 +113,22 @@ export default class Grid extends Component {
         newCells[i + 70] += 1;
         newCells[i + 80] += 1;
         newCells[i + 90] += 1;
+        newFlashCells[i + 10] = true;
+        newFlashCells[i + 20] = true;
+        newFlashCells[i + 30] = true;
+        newFlashCells[i + 40] = true;
+        newFlashCells[i + 50] = true;
+        newFlashCells[i + 60] = true;
+        newFlashCells[i + 70] = true;
+        newFlashCells[i + 80] = true;
+        newFlashCells[i + 90] = true;
         this.setState({
-          cells: newCells
+          cells: newCells,
+          flashCells: newFlashCells
         });
+        setTimeout(() => {
+          this.setState({ flashCells: new Array(100).fill(false) });
+        }, 100);
       } else if (i === 4) {
         newCells[i + 10] += 1;
         newCells[i + 20] += 1;
@@ -87,9 +139,22 @@ export default class Grid extends Component {
         newCells[i + 70] += 1;
         newCells[i + 80] += 1;
         newCells[i + 90] += 1;
+        newFlashCells[i + 10] = true;
+        newFlashCells[i + 20] = true;
+        newFlashCells[i + 30] = true;
+        newFlashCells[i + 40] = true;
+        newFlashCells[i + 50] = true;
+        newFlashCells[i + 60] = true;
+        newFlashCells[i + 70] = true;
+        newFlashCells[i + 80] = true;
+        newFlashCells[i + 90] = true;
         this.setState({
-          cells: newCells
+          cells: newCells,
+          flashCells: newFlashCells
         });
+        setTimeout(() => {
+          this.setState({ flashCells: new Array(100).fill(false) });
+        }, 100);
       } else if (i === 5) {
         newCells[i + 10] += 1;
         newCells[i + 20] += 1;
@@ -100,9 +165,22 @@ export default class Grid extends Component {
         newCells[i + 70] += 1;
         newCells[i + 80] += 1;
         newCells[i + 90] += 1;
+        newFlashCells[i + 10] = true;
+        newFlashCells[i + 20] = true;
+        newFlashCells[i + 30] = true;
+        newFlashCells[i + 40] = true;
+        newFlashCells[i + 50] = true;
+        newFlashCells[i + 60] = true;
+        newFlashCells[i + 70] = true;
+        newFlashCells[i + 80] = true;
+        newFlashCells[i + 90] = true;
         this.setState({
-          cells: newCells
+          cells: newCells,
+          flashCells: newFlashCells
         });
+        setTimeout(() => {
+          this.setState({ flashCells: new Array(100).fill(false) });
+        }, 100);
       } else if (i === 6) {
         newCells[i + 10] += 1;
         newCells[i + 20] += 1;
@@ -113,9 +191,22 @@ export default class Grid extends Component {
         newCells[i + 70] += 1;
         newCells[i + 80] += 1;
         newCells[i + 90] += 1;
+        newFlashCells[i + 10] = true;
+        newFlashCells[i + 20] = true;
+        newFlashCells[i + 30] = true;
+        newFlashCells[i + 40] = true;
+        newFlashCells[i + 50] = true;
+        newFlashCells[i + 60] = true;
+        newFlashCells[i + 70] = true;
+        newFlashCells[i + 80] = true;
+        newFlashCells[i + 90] = true;
         this.setState({
-          cells: newCells
+          cells: newCells,
+          flashCells: newFlashCells
         });
+        setTimeout(() => {
+          this.setState({ flashCells: new Array(100).fill(false) });
+        }, 100);
       } else if (i === 7) {
         newCells[i + 10] += 1;
         newCells[i + 20] += 1;
@@ -126,9 +217,22 @@ export default class Grid extends Component {
         newCells[i + 70] += 1;
         newCells[i + 80] += 1;
         newCells[i + 90] += 1;
+        newFlashCells[i + 10] = true;
+        newFlashCells[i + 20] = true;
+        newFlashCells[i + 30] = true;
+        newFlashCells[i + 40] = true;
+        newFlashCells[i + 50] = true;
+        newFlashCells[i + 60] = true;
+        newFlashCells[i + 70] = true;
+        newFlashCells[i + 80] = true;
+        newFlashCells[i + 90] = true;
         this.setState({
-          cells: newCells
+          cells: newCells,
+          flashCells: newFlashCells
         });
+        setTimeout(() => {
+          this.setState({ flashCells: new Array(100).fill(false) });
+        }, 100);
       } else if (i === 8) {
         newCells[i + 10] += 1;
         newCells[i + 20] += 1;
@@ -139,9 +243,22 @@ export default class Grid extends Component {
         newCells[i + 70] += 1;
         newCells[i + 80] += 1;
         newCells[i + 90] += 1;
+        newFlashCells[i + 10] = true;
+        newFlashCells[i + 20] = true;
+        newFlashCells[i + 30] = true;
+        newFlashCells[i + 40] = true;
+        newFlashCells[i + 50] = true;
+        newFlashCells[i + 60] = true;
+        newFlashCells[i + 70] = true;
+        newFlashCells[i + 80] = true;
+        newFlashCells[i + 90] = true;
         this.setState({
-          cells: newCells
+          cells: newCells,
+          flashCells: newFlashCells
         });
+        setTimeout(() => {
+          this.setState({ flashCells: new Array(100).fill(false) });
+        }, 100);
       } else {
         newCells[i + 10] += 1;
         newCells[i + 20] += 1;
@@ -152,16 +269,34 @@ export default class Grid extends Component {
         newCells[i + 70] += 1;
         newCells[i + 80] += 1;
         newCells[i + 90] += 1;
+        newFlashCells[i + 10] = true;
+        newFlashCells[i + 20] = true;
+        newFlashCells[i + 30] = true;
+        newFlashCells[i + 40] = true;
+        newFlashCells[i + 50] = true;
+        newFlashCells[i + 60] = true;
+        newFlashCells[i + 70] = true;
+        newFlashCells[i + 80] = true;
+        newFlashCells[i + 90] = true;
         this.setState({
-          cells: newCells
+          cells: newCells,
+          flashCells: newFlashCells
         });
+        setTimeout(() => {
+          this.setState({ flashCells: new Array(100).fill(false) });
+        }, 100);
       }
       this.setState({
-        cells: newCells
+        cells: newCells,
+        flashCells: newFlashCells
       });
+      setTimeout(() => {
+        this.setState({ flashCells: new Array(100).fill(false) });
+      }, 100);
     } else if (i >= 10 && i <= 19) {
       for (let index = 10; index < 20; index++) {
         newCells[index] += 1;
+        newFlashCells[index] = true;
       }
       if (i === 10) {
         newCells[i - 10] += 1;
@@ -173,9 +308,22 @@ export default class Grid extends Component {
         newCells[i + 60] += 1;
         newCells[i + 70] += 1;
         newCells[i + 80] += 1;
+        newFlashCells[i - 10] = true;
+        newFlashCells[i + 10] = true;
+        newFlashCells[i + 20] = true;
+        newFlashCells[i + 30] = true;
+        newFlashCells[i + 40] = true;
+        newFlashCells[i + 50] = true;
+        newFlashCells[i + 60] = true;
+        newFlashCells[i + 70] = true;
+        newFlashCells[i + 80] = true;
         this.setState({
-          cells: newCells
+          cells: newCells,
+          flashCells: newFlashCells
         });
+        setTimeout(() => {
+          this.setState({ flashCells: new Array(100).fill(false) });
+        }, 100);
       } else if (i === 11) {
         newCells[i - 10] += 1;
         newCells[i + 10] += 1;
@@ -186,9 +334,22 @@ export default class Grid extends Component {
         newCells[i + 60] += 1;
         newCells[i + 70] += 1;
         newCells[i + 80] += 1;
+        newFlashCells[i - 10] = true;
+        newFlashCells[i + 10] = true;
+        newFlashCells[i + 20] = true;
+        newFlashCells[i + 30] = true;
+        newFlashCells[i + 40] = true;
+        newFlashCells[i + 50] = true;
+        newFlashCells[i + 60] = true;
+        newFlashCells[i + 70] = true;
+        newFlashCells[i + 80] = true;
         this.setState({
-          cells: newCells
+          cells: newCells,
+          flashCells: newFlashCells
         });
+        setTimeout(() => {
+          this.setState({ flashCells: new Array(100).fill(false) });
+        }, 100);
       } else if (i === 12) {
         newCells[i - 10] += 1;
         newCells[i + 10] += 1;
@@ -199,9 +360,22 @@ export default class Grid extends Component {
         newCells[i + 60] += 1;
         newCells[i + 70] += 1;
         newCells[i + 80] += 1;
+        newFlashCells[i - 10] = true;
+        newFlashCells[i + 10] = true;
+        newFlashCells[i + 20] = true;
+        newFlashCells[i + 30] = true;
+        newFlashCells[i + 40] = true;
+        newFlashCells[i + 50] = true;
+        newFlashCells[i + 60] = true;
+        newFlashCells[i + 70] = true;
+        newFlashCells[i + 80] = true;
         this.setState({
-          cells: newCells
+          cells: newCells,
+          flashCells: newFlashCells
         });
+        setTimeout(() => {
+          this.setState({ flashCells: new Array(100).fill(false) });
+        }, 100);
       } else if (i === 13) {
         newCells[i - 10] += 1;
         newCells[i + 10] += 1;
@@ -212,9 +386,22 @@ export default class Grid extends Component {
         newCells[i + 60] += 1;
         newCells[i + 70] += 1;
         newCells[i + 80] += 1;
+        newFlashCells[i - 10] = true;
+        newFlashCells[i + 10] = true;
+        newFlashCells[i + 20] = true;
+        newFlashCells[i + 30] = true;
+        newFlashCells[i + 40] = true;
+        newFlashCells[i + 50] = true;
+        newFlashCells[i + 60] = true;
+        newFlashCells[i + 70] = true;
+        newFlashCells[i + 80] = true;
         this.setState({
-          cells: newCells
+          cells: newCells,
+          flashCells: newFlashCells
         });
+        setTimeout(() => {
+          this.setState({ flashCells: new Array(100).fill(false) });
+        }, 100);
       } else if (i === 14) {
         newCells[i - 10] += 1;
         newCells[i + 10] += 1;
@@ -225,9 +412,22 @@ export default class Grid extends Component {
         newCells[i + 60] += 1;
         newCells[i + 70] += 1;
         newCells[i + 80] += 1;
+        newFlashCells[i - 10] = true;
+        newFlashCells[i + 10] = true;
+        newFlashCells[i + 20] = true;
+        newFlashCells[i + 30] = true;
+        newFlashCells[i + 40] = true;
+        newFlashCells[i + 50] = true;
+        newFlashCells[i + 60] = true;
+        newFlashCells[i + 70] = true;
+        newFlashCells[i + 80] = true;
         this.setState({
-          cells: newCells
+          cells: newCells,
+          flashCells: newFlashCells
         });
+        setTimeout(() => {
+          this.setState({ flashCells: new Array(100).fill(false) });
+        }, 100);
       } else if (i === 15) {
         newCells[i - 10] += 1;
         newCells[i + 10] += 1;
@@ -238,9 +438,22 @@ export default class Grid extends Component {
         newCells[i + 60] += 1;
         newCells[i + 70] += 1;
         newCells[i + 80] += 1;
+        newFlashCells[i - 10] = true;
+        newFlashCells[i + 10] = true;
+        newFlashCells[i + 20] = true;
+        newFlashCells[i + 30] = true;
+        newFlashCells[i + 40] = true;
+        newFlashCells[i + 50] = true;
+        newFlashCells[i + 60] = true;
+        newFlashCells[i + 70] = true;
+        newFlashCells[i + 80] = true;
         this.setState({
-          cells: newCells
+          cells: newCells,
+          flashCells: newFlashCells
         });
+        setTimeout(() => {
+          this.setState({ flashCells: new Array(100).fill(false) });
+        }, 100);
       } else if (i === 16) {
         newCells[i - 10] += 1;
         newCells[i + 10] += 1;
@@ -251,9 +464,22 @@ export default class Grid extends Component {
         newCells[i + 60] += 1;
         newCells[i + 70] += 1;
         newCells[i + 80] += 1;
+        newFlashCells[i - 10] = true;
+        newFlashCells[i + 10] = true;
+        newFlashCells[i + 20] = true;
+        newFlashCells[i + 30] = true;
+        newFlashCells[i + 40] = true;
+        newFlashCells[i + 50] = true;
+        newFlashCells[i + 60] = true;
+        newFlashCells[i + 70] = true;
+        newFlashCells[i + 80] = true;
         this.setState({
-          cells: newCells
+          cells: newCells,
+          flashCells: newFlashCells
         });
+        setTimeout(() => {
+          this.setState({ flashCells: new Array(100).fill(false) });
+        }, 100);
       } else if (i === 17) {
         newCells[i - 10] += 1;
         newCells[i + 10] += 1;
@@ -264,9 +490,22 @@ export default class Grid extends Component {
         newCells[i + 60] += 1;
         newCells[i + 70] += 1;
         newCells[i + 80] += 1;
+        newFlashCells[i - 10] = true;
+        newFlashCells[i + 10] = true;
+        newFlashCells[i + 20] = true;
+        newFlashCells[i + 30] = true;
+        newFlashCells[i + 40] = true;
+        newFlashCells[i + 50] = true;
+        newFlashCells[i + 60] = true;
+        newFlashCells[i + 70] = true;
+        newFlashCells[i + 80] = true;
         this.setState({
-          cells: newCells
+          cells: newCells,
+          flashCells: newFlashCells
         });
+        setTimeout(() => {
+          this.setState({ flashCells: new Array(100).fill(false) });
+        }, 100);
       } else if (i === 18) {
         newCells[i - 10] += 1;
         newCells[i + 10] += 1;
@@ -277,9 +516,22 @@ export default class Grid extends Component {
         newCells[i + 60] += 1;
         newCells[i + 70] += 1;
         newCells[i + 80] += 1;
+        newFlashCells[i - 10] = true;
+        newFlashCells[i + 10] = true;
+        newFlashCells[i + 20] = true;
+        newFlashCells[i + 30] = true;
+        newFlashCells[i + 40] = true;
+        newFlashCells[i + 50] = true;
+        newFlashCells[i + 60] = true;
+        newFlashCells[i + 70] = true;
+        newFlashCells[i + 80] = true;
         this.setState({
-          cells: newCells
+          cells: newCells,
+          flashCells: newFlashCells
         });
+        setTimeout(() => {
+          this.setState({ flashCells: new Array(100).fill(false) });
+        }, 100);
       } else {
         newCells[i - 10] += 1;
         newCells[i + 10] += 1;
@@ -290,16 +542,34 @@ export default class Grid extends Component {
         newCells[i + 60] += 1;
         newCells[i + 70] += 1;
         newCells[i + 80] += 1;
+        newFlashCells[i - 10] = true;
+        newFlashCells[i + 10] = true;
+        newFlashCells[i + 20] = true;
+        newFlashCells[i + 30] = true;
+        newFlashCells[i + 40] = true;
+        newFlashCells[i + 50] = true;
+        newFlashCells[i + 60] = true;
+        newFlashCells[i + 70] = true;
+        newFlashCells[i + 80] = true;
         this.setState({
-          cells: newCells
+          cells: newCells,
+          flashCells: newFlashCells
         });
+        setTimeout(() => {
+          this.setState({ flashCells: new Array(100).fill(false) });
+        }, 100);
       }
       this.setState({
-        cells: newCells
+        cells: newCells,
+        flashCells: newFlashCells
       });
+      setTimeout(() => {
+        this.setState({ flashCells: new Array(100).fill(false) });
+      }, 100);
     } else if (i >= 20 && i <= 29) {
       for (let index = 20; index < 30; index++) {
         newCells[index] += 1;
+        newFlashCells[index] = true;
       }
       if (i === 20) {
         newCells[i - 20] += 1;
@@ -311,9 +581,22 @@ export default class Grid extends Component {
         newCells[i + 50] += 1;
         newCells[i + 60] += 1;
         newCells[i + 70] += 1;
+        newFlashCells[i - 20] = true;
+        newFlashCells[i - 10] = true;
+        newFlashCells[i + 10] = true;
+        newFlashCells[i + 20] = true;
+        newFlashCells[i + 30] = true;
+        newFlashCells[i + 40] = true;
+        newFlashCells[i + 50] = true;
+        newFlashCells[i + 60] = true;
+        newFlashCells[i + 70] = true;
         this.setState({
-          cells: newCells
+          cells: newCells,
+          flashCells: newFlashCells
         });
+        setTimeout(() => {
+          this.setState({ flashCells: new Array(100).fill(false) });
+        }, 100);
       } else if (i === 21) {
         newCells[i - 20] += 1;
         newCells[i - 10] += 1;
@@ -324,9 +607,22 @@ export default class Grid extends Component {
         newCells[i + 50] += 1;
         newCells[i + 60] += 1;
         newCells[i + 70] += 1;
+        newFlashCells[i - 20] = true;
+        newFlashCells[i - 10] = true;
+        newFlashCells[i + 10] = true;
+        newFlashCells[i + 20] = true;
+        newFlashCells[i + 30] = true;
+        newFlashCells[i + 40] = true;
+        newFlashCells[i + 50] = true;
+        newFlashCells[i + 60] = true;
+        newFlashCells[i + 70] = true;
         this.setState({
-          cells: newCells
+          cells: newCells,
+          flashCells: newFlashCells
         });
+        setTimeout(() => {
+          this.setState({ flashCells: new Array(100).fill(false) });
+        }, 100);
       } else if (i === 22) {
         newCells[i - 20] += 1;
         newCells[i - 10] += 1;
@@ -337,9 +633,22 @@ export default class Grid extends Component {
         newCells[i + 50] += 1;
         newCells[i + 60] += 1;
         newCells[i + 70] += 1;
+        newFlashCells[i - 20] = true;
+        newFlashCells[i - 10] = true;
+        newFlashCells[i + 10] = true;
+        newFlashCells[i + 20] = true;
+        newFlashCells[i + 30] = true;
+        newFlashCells[i + 40] = true;
+        newFlashCells[i + 50] = true;
+        newFlashCells[i + 60] = true;
+        newFlashCells[i + 70] = true;
         this.setState({
-          cells: newCells
+          cells: newCells,
+          flashCells: newFlashCells
         });
+        setTimeout(() => {
+          this.setState({ flashCells: new Array(100).fill(false) });
+        }, 100);
       } else if (i === 23) {
         newCells[i - 20] += 1;
         newCells[i - 10] += 1;
@@ -350,9 +659,22 @@ export default class Grid extends Component {
         newCells[i + 50] += 1;
         newCells[i + 60] += 1;
         newCells[i + 70] += 1;
+        newFlashCells[i - 20] = true;
+        newFlashCells[i - 10] = true;
+        newFlashCells[i + 10] = true;
+        newFlashCells[i + 20] = true;
+        newFlashCells[i + 30] = true;
+        newFlashCells[i + 40] = true;
+        newFlashCells[i + 50] = true;
+        newFlashCells[i + 60] = true;
+        newFlashCells[i + 70] = true;
         this.setState({
-          cells: newCells
+          cells: newCells,
+          flashCells: newFlashCells
         });
+        setTimeout(() => {
+          this.setState({ flashCells: new Array(100).fill(false) });
+        }, 100);
       } else if (i === 24) {
         newCells[i - 20] += 1;
         newCells[i - 10] += 1;
@@ -363,9 +685,22 @@ export default class Grid extends Component {
         newCells[i + 50] += 1;
         newCells[i + 60] += 1;
         newCells[i + 70] += 1;
+        newFlashCells[i - 20] = true;
+        newFlashCells[i - 10] = true;
+        newFlashCells[i + 10] = true;
+        newFlashCells[i + 20] = true;
+        newFlashCells[i + 30] = true;
+        newFlashCells[i + 40] = true;
+        newFlashCells[i + 50] = true;
+        newFlashCells[i + 60] = true;
+        newFlashCells[i + 70] = true;
         this.setState({
-          cells: newCells
+          cells: newCells,
+          flashCells: newFlashCells
         });
+        setTimeout(() => {
+          this.setState({ flashCells: new Array(100).fill(false) });
+        }, 100);
       } else if (i === 25) {
         newCells[i - 20] += 1;
         newCells[i - 10] += 1;
@@ -376,9 +711,22 @@ export default class Grid extends Component {
         newCells[i + 50] += 1;
         newCells[i + 60] += 1;
         newCells[i + 70] += 1;
+        newFlashCells[i - 20] = true;
+        newFlashCells[i - 10] = true;
+        newFlashCells[i + 10] = true;
+        newFlashCells[i + 20] = true;
+        newFlashCells[i + 30] = true;
+        newFlashCells[i + 40] = true;
+        newFlashCells[i + 50] = true;
+        newFlashCells[i + 60] = true;
+        newFlashCells[i + 70] = true;
         this.setState({
-          cells: newCells
+          cells: newCells,
+          flashCells: newFlashCells
         });
+        setTimeout(() => {
+          this.setState({ flashCells: new Array(100).fill(false) });
+        }, 100);
       } else if (i === 26) {
         newCells[i - 20] += 1;
         newCells[i - 10] += 1;
@@ -389,9 +737,22 @@ export default class Grid extends Component {
         newCells[i + 50] += 1;
         newCells[i + 60] += 1;
         newCells[i + 70] += 1;
+        newFlashCells[i - 20] = true;
+        newFlashCells[i - 10] = true;
+        newFlashCells[i + 10] = true;
+        newFlashCells[i + 20] = true;
+        newFlashCells[i + 30] = true;
+        newFlashCells[i + 40] = true;
+        newFlashCells[i + 50] = true;
+        newFlashCells[i + 60] = true;
+        newFlashCells[i + 70] = true;
         this.setState({
-          cells: newCells
+          cells: newCells,
+          flashCells: newFlashCells
         });
+        setTimeout(() => {
+          this.setState({ flashCells: new Array(100).fill(false) });
+        }, 100);
       } else if (i === 27) {
         newCells[i - 20] += 1;
         newCells[i - 10] += 1;
@@ -402,9 +763,22 @@ export default class Grid extends Component {
         newCells[i + 50] += 1;
         newCells[i + 60] += 1;
         newCells[i + 70] += 1;
+        newFlashCells[i - 20] = true;
+        newFlashCells[i - 10] = true;
+        newFlashCells[i + 10] = true;
+        newFlashCells[i + 20] = true;
+        newFlashCells[i + 30] = true;
+        newFlashCells[i + 40] = true;
+        newFlashCells[i + 50] = true;
+        newFlashCells[i + 60] = true;
+        newFlashCells[i + 70] = true;
         this.setState({
-          cells: newCells
+          cells: newCells,
+          flashCells: newFlashCells
         });
+        setTimeout(() => {
+          this.setState({ flashCells: new Array(100).fill(false) });
+        }, 100);
       } else if (i === 28) {
         newCells[i - 20] += 1;
         newCells[i - 10] += 1;
@@ -415,9 +789,22 @@ export default class Grid extends Component {
         newCells[i + 50] += 1;
         newCells[i + 60] += 1;
         newCells[i + 70] += 1;
+        newFlashCells[i - 20] = true;
+        newFlashCells[i - 10] = true;
+        newFlashCells[i + 10] = true;
+        newFlashCells[i + 20] = true;
+        newFlashCells[i + 30] = true;
+        newFlashCells[i + 40] = true;
+        newFlashCells[i + 50] = true;
+        newFlashCells[i + 60] = true;
+        newFlashCells[i + 70] = true;
         this.setState({
-          cells: newCells
+          cells: newCells,
+          flashCells: newFlashCells
         });
+        setTimeout(() => {
+          this.setState({ flashCells: new Array(100).fill(false) });
+        }, 100);
       } else {
         newCells[i - 20] += 1;
         newCells[i - 10] += 1;
@@ -428,16 +815,34 @@ export default class Grid extends Component {
         newCells[i + 50] += 1;
         newCells[i + 60] += 1;
         newCells[i + 70] += 1;
+        newFlashCells[i - 20] = true;
+        newFlashCells[i - 10] = true;
+        newFlashCells[i + 10] = true;
+        newFlashCells[i + 20] = true;
+        newFlashCells[i + 30] = true;
+        newFlashCells[i + 40] = true;
+        newFlashCells[i + 50] = true;
+        newFlashCells[i + 60] = true;
+        newFlashCells[i + 70] = true;
         this.setState({
-          cells: newCells
+          cells: newCells,
+          flashCells: newFlashCells
         });
+        setTimeout(() => {
+          this.setState({ flashCells: new Array(100).fill(false) });
+        }, 100);
       }
       this.setState({
-        cells: newCells
+        cells: newCells,
+        flashCells: newFlashCells
       });
+      setTimeout(() => {
+        this.setState({ flashCells: new Array(100).fill(false) });
+      }, 100);
     } else if (i >= 30 && i <= 39) {
       for (let index = 30; index < 40; index++) {
         newCells[index] += 1;
+        newFlashCells[index] = true;
       }
       if (i === 30) {
         newCells[i - 30] += 1;
@@ -449,9 +854,22 @@ export default class Grid extends Component {
         newCells[i + 40] += 1;
         newCells[i + 50] += 1;
         newCells[i + 60] += 1;
+        newFlashCells[i - 30] = true;
+        newFlashCells[i - 20] = true;
+        newFlashCells[i - 10] = true;
+        newFlashCells[i + 10] = true;
+        newFlashCells[i + 20] = true;
+        newFlashCells[i + 30] = true;
+        newFlashCells[i + 40] = true;
+        newFlashCells[i + 50] = true;
+        newFlashCells[i + 60] = true;
         this.setState({
-          cells: newCells
+          cells: newCells,
+          flashCells: newFlashCells
         });
+        setTimeout(() => {
+          this.setState({ flashCells: new Array(100).fill(false) });
+        }, 100);
       } else if (i === 31) {
         newCells[i - 30] += 1;
         newCells[i - 20] += 1;
@@ -462,9 +880,22 @@ export default class Grid extends Component {
         newCells[i + 40] += 1;
         newCells[i + 50] += 1;
         newCells[i + 60] += 1;
+        newFlashCells[i - 30] = true;
+        newFlashCells[i - 20] = true;
+        newFlashCells[i - 10] = true;
+        newFlashCells[i + 10] = true;
+        newFlashCells[i + 20] = true;
+        newFlashCells[i + 30] = true;
+        newFlashCells[i + 40] = true;
+        newFlashCells[i + 50] = true;
+        newFlashCells[i + 60] = true;
         this.setState({
-          cells: newCells
+          cells: newCells,
+          flashCells: newFlashCells
         });
+        setTimeout(() => {
+          this.setState({ flashCells: new Array(100).fill(false) });
+        }, 100);
       } else if (i === 32) {
         newCells[i - 30] += 1;
         newCells[i - 20] += 1;
@@ -475,9 +906,22 @@ export default class Grid extends Component {
         newCells[i + 40] += 1;
         newCells[i + 50] += 1;
         newCells[i + 60] += 1;
+        newFlashCells[i - 30] = true;
+        newFlashCells[i - 20] = true;
+        newFlashCells[i - 10] = true;
+        newFlashCells[i + 10] = true;
+        newFlashCells[i + 20] = true;
+        newFlashCells[i + 30] = true;
+        newFlashCells[i + 40] = true;
+        newFlashCells[i + 50] = true;
+        newFlashCells[i + 60] = true;
         this.setState({
-          cells: newCells
+          cells: newCells,
+          flashCells: newFlashCells
         });
+        setTimeout(() => {
+          this.setState({ flashCells: new Array(100).fill(false) });
+        }, 100);
       } else if (i === 33) {
         newCells[i - 30] += 1;
         newCells[i - 20] += 1;
@@ -488,9 +932,22 @@ export default class Grid extends Component {
         newCells[i + 40] += 1;
         newCells[i + 50] += 1;
         newCells[i + 60] += 1;
+        newFlashCells[i - 30] = true;
+        newFlashCells[i - 20] = true;
+        newFlashCells[i - 10] = true;
+        newFlashCells[i + 10] = true;
+        newFlashCells[i + 20] = true;
+        newFlashCells[i + 30] = true;
+        newFlashCells[i + 40] = true;
+        newFlashCells[i + 50] = true;
+        newFlashCells[i + 60] = true;
         this.setState({
-          cells: newCells
+          cells: newCells,
+          flashCells: newFlashCells
         });
+        setTimeout(() => {
+          this.setState({ flashCells: new Array(100).fill(false) });
+        }, 100);
       } else if (i === 34) {
         newCells[i - 30] += 1;
         newCells[i - 20] += 1;
@@ -501,9 +958,22 @@ export default class Grid extends Component {
         newCells[i + 40] += 1;
         newCells[i + 50] += 1;
         newCells[i + 60] += 1;
+        newFlashCells[i - 30] = true;
+        newFlashCells[i - 20] = true;
+        newFlashCells[i - 10] = true;
+        newFlashCells[i + 10] = true;
+        newFlashCells[i + 20] = true;
+        newFlashCells[i + 30] = true;
+        newFlashCells[i + 40] = true;
+        newFlashCells[i + 50] = true;
+        newFlashCells[i + 60] = true;
         this.setState({
-          cells: newCells
+          cells: newCells,
+          flashCells: newFlashCells
         });
+        setTimeout(() => {
+          this.setState({ flashCells: new Array(100).fill(false) });
+        }, 100);
       } else if (i === 35) {
         newCells[i - 30] += 1;
         newCells[i - 20] += 1;
@@ -514,9 +984,22 @@ export default class Grid extends Component {
         newCells[i + 40] += 1;
         newCells[i + 50] += 1;
         newCells[i + 60] += 1;
+        newFlashCells[i - 30] = true;
+        newFlashCells[i - 20] = true;
+        newFlashCells[i - 10] = true;
+        newFlashCells[i + 10] = true;
+        newFlashCells[i + 20] = true;
+        newFlashCells[i + 30] = true;
+        newFlashCells[i + 40] = true;
+        newFlashCells[i + 50] = true;
+        newFlashCells[i + 60] = true;
         this.setState({
-          cells: newCells
+          cells: newCells,
+          flashCells: newFlashCells
         });
+        setTimeout(() => {
+          this.setState({ flashCells: new Array(100).fill(false) });
+        }, 100);
       } else if (i === 36) {
         newCells[i - 30] += 1;
         newCells[i - 20] += 1;
@@ -527,9 +1010,22 @@ export default class Grid extends Component {
         newCells[i + 40] += 1;
         newCells[i + 50] += 1;
         newCells[i + 60] += 1;
+        newFlashCells[i - 30] = true;
+        newFlashCells[i - 20] = true;
+        newFlashCells[i - 10] = true;
+        newFlashCells[i + 10] = true;
+        newFlashCells[i + 20] = true;
+        newFlashCells[i + 30] = true;
+        newFlashCells[i + 40] = true;
+        newFlashCells[i + 50] = true;
+        newFlashCells[i + 60] = true;
         this.setState({
-          cells: newCells
+          cells: newCells,
+          flashCells: newFlashCells
         });
+        setTimeout(() => {
+          this.setState({ flashCells: new Array(100).fill(false) });
+        }, 100);
       } else if (i === 37) {
         newCells[i - 30] += 1;
         newCells[i - 20] += 1;
@@ -540,9 +1036,22 @@ export default class Grid extends Component {
         newCells[i + 40] += 1;
         newCells[i + 50] += 1;
         newCells[i + 60] += 1;
+        newFlashCells[i - 30] = true;
+        newFlashCells[i - 20] = true;
+        newFlashCells[i - 10] = true;
+        newFlashCells[i + 10] = true;
+        newFlashCells[i + 20] = true;
+        newFlashCells[i + 30] = true;
+        newFlashCells[i + 40] = true;
+        newFlashCells[i + 50] = true;
+        newFlashCells[i + 60] = true;
         this.setState({
-          cells: newCells
+          cells: newCells,
+          flashCells: newFlashCells
         });
+        setTimeout(() => {
+          this.setState({ flashCells: new Array(100).fill(false) });
+        }, 100);
       } else if (i === 38) {
         newCells[i - 30] += 1;
         newCells[i - 20] += 1;
@@ -553,9 +1062,22 @@ export default class Grid extends Component {
         newCells[i + 40] += 1;
         newCells[i + 50] += 1;
         newCells[i + 60] += 1;
+        newFlashCells[i - 30] = true;
+        newFlashCells[i - 20] = true;
+        newFlashCells[i - 10] = true;
+        newFlashCells[i + 10] = true;
+        newFlashCells[i + 20] = true;
+        newFlashCells[i + 30] = true;
+        newFlashCells[i + 40] = true;
+        newFlashCells[i + 50] = true;
+        newFlashCells[i + 60] = true;
         this.setState({
-          cells: newCells
+          cells: newCells,
+          flashCells: newFlashCells
         });
+        setTimeout(() => {
+          this.setState({ flashCells: new Array(100).fill(false) });
+        }, 100);
       } else {
         newCells[i - 30] += 1;
         newCells[i - 20] += 1;
@@ -566,16 +1088,34 @@ export default class Grid extends Component {
         newCells[i + 40] += 1;
         newCells[i + 50] += 1;
         newCells[i + 60] += 1;
+        newFlashCells[i - 30] = true;
+        newFlashCells[i - 20] = true;
+        newFlashCells[i - 10] = true;
+        newFlashCells[i + 10] = true;
+        newFlashCells[i + 20] = true;
+        newFlashCells[i + 30] = true;
+        newFlashCells[i + 40] = true;
+        newFlashCells[i + 50] = true;
+        newFlashCells[i + 60] = true;
         this.setState({
-          cells: newCells
+          cells: newCells,
+          flashCells: newFlashCells
         });
+        setTimeout(() => {
+          this.setState({ flashCells: new Array(100).fill(false) });
+        }, 100);
       }
       this.setState({
-        cells: newCells
+        cells: newCells,
+        flashCells: newFlashCells
       });
+      setTimeout(() => {
+        this.setState({ flashCells: new Array(100).fill(false) });
+      }, 100);
     } else if (i >= 40 && i <= 49) {
       for (let index = 40; index < 50; index++) {
         newCells[index] += 1;
+        newFlashCells[index] = true;
       }
       if (i === 40) {
         newCells[i - 40] += 1;
@@ -587,9 +1127,22 @@ export default class Grid extends Component {
         newCells[i + 30] += 1;
         newCells[i + 40] += 1;
         newCells[i + 50] += 1;
+        newFlashCells[i - 40] = true;
+        newFlashCells[i - 30] = true;
+        newFlashCells[i - 20] = true;
+        newFlashCells[i - 10] = true;
+        newFlashCells[i + 10] = true;
+        newFlashCells[i + 20] = true;
+        newFlashCells[i + 30] = true;
+        newFlashCells[i + 40] = true;
+        newFlashCells[i + 50] = true;
         this.setState({
-          cells: newCells
+          cells: newCells,
+          flashCells: newFlashCells
         });
+        setTimeout(() => {
+          this.setState({ flashCells: new Array(100).fill(false) });
+        }, 100);
       } else if (i === 41) {
         newCells[i - 40] += 1;
         newCells[i - 30] += 1;
@@ -600,9 +1153,22 @@ export default class Grid extends Component {
         newCells[i + 30] += 1;
         newCells[i + 40] += 1;
         newCells[i + 50] += 1;
+        newFlashCells[i - 40] = true;
+        newFlashCells[i - 30] = true;
+        newFlashCells[i - 20] = true;
+        newFlashCells[i - 10] = true;
+        newFlashCells[i + 10] = true;
+        newFlashCells[i + 20] = true;
+        newFlashCells[i + 30] = true;
+        newFlashCells[i + 40] = true;
+        newFlashCells[i + 50] = true;
         this.setState({
-          cells: newCells
+          cells: newCells,
+          flashCells: newFlashCells
         });
+        setTimeout(() => {
+          this.setState({ flashCells: new Array(100).fill(false) });
+        }, 100);
       } else if (i === 42) {
         newCells[i - 40] += 1;
         newCells[i - 30] += 1;
@@ -613,9 +1179,22 @@ export default class Grid extends Component {
         newCells[i + 30] += 1;
         newCells[i + 40] += 1;
         newCells[i + 50] += 1;
+        newFlashCells[i - 40] = true;
+        newFlashCells[i - 30] = true;
+        newFlashCells[i - 20] = true;
+        newFlashCells[i - 10] = true;
+        newFlashCells[i + 10] = true;
+        newFlashCells[i + 20] = true;
+        newFlashCells[i + 30] = true;
+        newFlashCells[i + 40] = true;
+        newFlashCells[i + 50] = true;
         this.setState({
-          cells: newCells
+          cells: newCells,
+          flashCells: newFlashCells
         });
+        setTimeout(() => {
+          this.setState({ flashCells: new Array(100).fill(false) });
+        }, 100);
       } else if (i === 43) {
         newCells[i - 40] += 1;
         newCells[i - 30] += 1;
@@ -626,9 +1205,22 @@ export default class Grid extends Component {
         newCells[i + 30] += 1;
         newCells[i + 40] += 1;
         newCells[i + 50] += 1;
+        newFlashCells[i - 40] = true;
+        newFlashCells[i - 30] = true;
+        newFlashCells[i - 20] = true;
+        newFlashCells[i - 10] = true;
+        newFlashCells[i + 10] = true;
+        newFlashCells[i + 20] = true;
+        newFlashCells[i + 30] = true;
+        newFlashCells[i + 40] = true;
+        newFlashCells[i + 50] = true;
         this.setState({
-          cells: newCells
+          cells: newCells,
+          flashCells: newFlashCells
         });
+        setTimeout(() => {
+          this.setState({ flashCells: new Array(100).fill(false) });
+        }, 100);
       } else if (i === 44) {
         newCells[i - 40] += 1;
         newCells[i - 30] += 1;
@@ -639,9 +1231,22 @@ export default class Grid extends Component {
         newCells[i + 30] += 1;
         newCells[i + 40] += 1;
         newCells[i + 50] += 1;
+        newFlashCells[i - 40] = true;
+        newFlashCells[i - 30] = true;
+        newFlashCells[i - 20] = true;
+        newFlashCells[i - 10] = true;
+        newFlashCells[i + 10] = true;
+        newFlashCells[i + 20] = true;
+        newFlashCells[i + 30] = true;
+        newFlashCells[i + 40] = true;
+        newFlashCells[i + 50] = true;
         this.setState({
-          cells: newCells
+          cells: newCells,
+          flashCells: newFlashCells
         });
+        setTimeout(() => {
+          this.setState({ flashCells: new Array(100).fill(false) });
+        }, 100);
       } else if (i === 45) {
         newCells[i - 40] += 1;
         newCells[i - 30] += 1;
@@ -652,9 +1257,22 @@ export default class Grid extends Component {
         newCells[i + 30] += 1;
         newCells[i + 40] += 1;
         newCells[i + 50] += 1;
+        newFlashCells[i - 40] = true;
+        newFlashCells[i - 30] = true;
+        newFlashCells[i - 20] = true;
+        newFlashCells[i - 10] = true;
+        newFlashCells[i + 10] = true;
+        newFlashCells[i + 20] = true;
+        newFlashCells[i + 30] = true;
+        newFlashCells[i + 40] = true;
+        newFlashCells[i + 50] = true;
         this.setState({
-          cells: newCells
+          cells: newCells,
+          flashCells: newFlashCells
         });
+        setTimeout(() => {
+          this.setState({ flashCells: new Array(100).fill(false) });
+        }, 100);
       } else if (i === 46) {
         newCells[i - 40] += 1;
         newCells[i - 30] += 1;
@@ -665,9 +1283,22 @@ export default class Grid extends Component {
         newCells[i + 30] += 1;
         newCells[i + 40] += 1;
         newCells[i + 50] += 1;
+        newFlashCells[i - 40] = true;
+        newFlashCells[i - 30] = true;
+        newFlashCells[i - 20] = true;
+        newFlashCells[i - 10] = true;
+        newFlashCells[i + 10] = true;
+        newFlashCells[i + 20] = true;
+        newFlashCells[i + 30] = true;
+        newFlashCells[i + 40] = true;
+        newFlashCells[i + 50] = true;
         this.setState({
-          cells: newCells
+          cells: newCells,
+          flashCells: newFlashCells
         });
+        setTimeout(() => {
+          this.setState({ flashCells: new Array(100).fill(false) });
+        }, 100);
       } else if (i === 47) {
         newCells[i - 40] += 1;
         newCells[i - 30] += 1;
@@ -678,9 +1309,22 @@ export default class Grid extends Component {
         newCells[i + 30] += 1;
         newCells[i + 40] += 1;
         newCells[i + 50] += 1;
+        newFlashCells[i - 40] = true;
+        newFlashCells[i - 30] = true;
+        newFlashCells[i - 20] = true;
+        newFlashCells[i - 10] = true;
+        newFlashCells[i + 10] = true;
+        newFlashCells[i + 20] = true;
+        newFlashCells[i + 30] = true;
+        newFlashCells[i + 40] = true;
+        newFlashCells[i + 50] = true;
         this.setState({
-          cells: newCells
+          cells: newCells,
+          flashCells: newFlashCells
         });
+        setTimeout(() => {
+          this.setState({ flashCells: new Array(100).fill(false) });
+        }, 100);
       } else if (i === 48) {
         newCells[i - 40] += 1;
         newCells[i - 30] += 1;
@@ -691,9 +1335,22 @@ export default class Grid extends Component {
         newCells[i + 30] += 1;
         newCells[i + 40] += 1;
         newCells[i + 50] += 1;
+        newFlashCells[i - 40] = true;
+        newFlashCells[i - 30] = true;
+        newFlashCells[i - 20] = true;
+        newFlashCells[i - 10] = true;
+        newFlashCells[i + 10] = true;
+        newFlashCells[i + 20] = true;
+        newFlashCells[i + 30] = true;
+        newFlashCells[i + 40] = true;
+        newFlashCells[i + 50] = true;
         this.setState({
-          cells: newCells
+          cells: newCells,
+          flashCells: newFlashCells
         });
+        setTimeout(() => {
+          this.setState({ flashCells: new Array(100).fill(false) });
+        }, 100);
       } else {
         newCells[i - 40] += 1;
         newCells[i - 30] += 1;
@@ -704,16 +1361,34 @@ export default class Grid extends Component {
         newCells[i + 30] += 1;
         newCells[i + 40] += 1;
         newCells[i + 50] += 1;
+        newFlashCells[i - 40] = true;
+        newFlashCells[i - 30] = true;
+        newFlashCells[i - 20] = true;
+        newFlashCells[i - 10] = true;
+        newFlashCells[i + 10] = true;
+        newFlashCells[i + 20] = true;
+        newFlashCells[i + 30] = true;
+        newFlashCells[i + 40] = true;
+        newFlashCells[i + 50] = true;
         this.setState({
-          cells: newCells
+          cells: newCells,
+          flashCells: newFlashCells
         });
+        setTimeout(() => {
+          this.setState({ flashCells: new Array(100).fill(false) });
+        }, 100);
       }
       this.setState({
-        cells: newCells
+        cells: newCells,
+        flashCells: newFlashCells
       });
+      setTimeout(() => {
+        this.setState({ flashCells: new Array(100).fill(false) });
+      }, 100);
     } else if (i >= 50 && i <= 59) {
       for (let index = 50; index < 60; index++) {
         newCells[index] += 1;
+        newFlashCells[index] = true;
       }
       if (i === 50) {
         newCells[i - 50] += 1;
@@ -725,9 +1400,22 @@ export default class Grid extends Component {
         newCells[i + 20] += 1;
         newCells[i + 30] += 1;
         newCells[i + 40] += 1;
+        newFlashCells[i - 50] = true;
+        newFlashCells[i - 40] = true;
+        newFlashCells[i - 30] = true;
+        newFlashCells[i - 20] = true;
+        newFlashCells[i - 10] = true;
+        newFlashCells[i + 10] = true;
+        newFlashCells[i + 20] = true;
+        newFlashCells[i + 30] = true;
+        newFlashCells[i + 40] = true;
         this.setState({
-          cells: newCells
+          cells: newCells,
+          flashCells: newFlashCells
         });
+        setTimeout(() => {
+          this.setState({ flashCells: new Array(100).fill(false) });
+        }, 100);
       } else if (i === 51) {
         newCells[i - 50] += 1;
         newCells[i - 40] += 1;
@@ -738,9 +1426,22 @@ export default class Grid extends Component {
         newCells[i + 20] += 1;
         newCells[i + 30] += 1;
         newCells[i + 40] += 1;
+        newFlashCells[i - 50] = true;
+        newFlashCells[i - 40] = true;
+        newFlashCells[i - 30] = true;
+        newFlashCells[i - 20] = true;
+        newFlashCells[i - 10] = true;
+        newFlashCells[i + 10] = true;
+        newFlashCells[i + 20] = true;
+        newFlashCells[i + 30] = true;
+        newFlashCells[i + 40] = true;
         this.setState({
-          cells: newCells
+          cells: newCells,
+          flashCells: newFlashCells
         });
+        setTimeout(() => {
+          this.setState({ flashCells: new Array(100).fill(false) });
+        }, 100);
       } else if (i === 52) {
         newCells[i - 50] += 1;
         newCells[i - 40] += 1;
@@ -751,9 +1452,22 @@ export default class Grid extends Component {
         newCells[i + 20] += 1;
         newCells[i + 30] += 1;
         newCells[i + 40] += 1;
+        newFlashCells[i - 50] = true;
+        newFlashCells[i - 40] = true;
+        newFlashCells[i - 30] = true;
+        newFlashCells[i - 20] = true;
+        newFlashCells[i - 10] = true;
+        newFlashCells[i + 10] = true;
+        newFlashCells[i + 20] = true;
+        newFlashCells[i + 30] = true;
+        newFlashCells[i + 40] = true;
         this.setState({
-          cells: newCells
+          cells: newCells,
+          flashCells: newFlashCells
         });
+        setTimeout(() => {
+          this.setState({ flashCells: new Array(100).fill(false) });
+        }, 100);
       } else if (i === 53) {
         newCells[i - 50] += 1;
         newCells[i - 40] += 1;
@@ -764,9 +1478,22 @@ export default class Grid extends Component {
         newCells[i + 20] += 1;
         newCells[i + 30] += 1;
         newCells[i + 40] += 1;
+        newFlashCells[i - 50] = true;
+        newFlashCells[i - 40] = true;
+        newFlashCells[i - 30] = true;
+        newFlashCells[i - 20] = true;
+        newFlashCells[i - 10] = true;
+        newFlashCells[i + 10] = true;
+        newFlashCells[i + 20] = true;
+        newFlashCells[i + 30] = true;
+        newFlashCells[i + 40] = true;
         this.setState({
-          cells: newCells
+          cells: newCells,
+          flashCells: newFlashCells
         });
+        setTimeout(() => {
+          this.setState({ flashCells: new Array(100).fill(false) });
+        }, 100);
       } else if (i === 54) {
         newCells[i - 50] += 1;
         newCells[i - 40] += 1;
@@ -777,9 +1504,22 @@ export default class Grid extends Component {
         newCells[i + 20] += 1;
         newCells[i + 30] += 1;
         newCells[i + 40] += 1;
+        newFlashCells[i - 50] = true;
+        newFlashCells[i - 40] = true;
+        newFlashCells[i - 30] = true;
+        newFlashCells[i - 20] = true;
+        newFlashCells[i - 10] = true;
+        newFlashCells[i + 10] = true;
+        newFlashCells[i + 20] = true;
+        newFlashCells[i + 30] = true;
+        newFlashCells[i + 40] = true;
         this.setState({
-          cells: newCells
+          cells: newCells,
+          flashCells: newFlashCells
         });
+        setTimeout(() => {
+          this.setState({ flashCells: new Array(100).fill(false) });
+        }, 100);
       } else if (i === 55) {
         newCells[i - 50] += 1;
         newCells[i - 40] += 1;
@@ -790,9 +1530,22 @@ export default class Grid extends Component {
         newCells[i + 20] += 1;
         newCells[i + 30] += 1;
         newCells[i + 40] += 1;
+        newFlashCells[i - 50] = true;
+        newFlashCells[i - 40] = true;
+        newFlashCells[i - 30] = true;
+        newFlashCells[i - 20] = true;
+        newFlashCells[i - 10] = true;
+        newFlashCells[i + 10] = true;
+        newFlashCells[i + 20] = true;
+        newFlashCells[i + 30] = true;
+        newFlashCells[i + 40] = true;
         this.setState({
-          cells: newCells
+          cells: newCells,
+          flashCells: newFlashCells
         });
+        setTimeout(() => {
+          this.setState({ flashCells: new Array(100).fill(false) });
+        }, 100);
       } else if (i === 56) {
         newCells[i - 50] += 1;
         newCells[i - 40] += 1;
@@ -803,9 +1556,22 @@ export default class Grid extends Component {
         newCells[i + 20] += 1;
         newCells[i + 30] += 1;
         newCells[i + 40] += 1;
+        newFlashCells[i - 50] = true;
+        newFlashCells[i - 40] = true;
+        newFlashCells[i - 30] = true;
+        newFlashCells[i - 20] = true;
+        newFlashCells[i - 10] = true;
+        newFlashCells[i + 10] = true;
+        newFlashCells[i + 20] = true;
+        newFlashCells[i + 30] = true;
+        newFlashCells[i + 40] = true;
         this.setState({
-          cells: newCells
+          cells: newCells,
+          flashCells: newFlashCells
         });
+        setTimeout(() => {
+          this.setState({ flashCells: new Array(100).fill(false) });
+        }, 100);
       } else if (i === 57) {
         newCells[i - 50] += 1;
         newCells[i - 40] += 1;
@@ -816,9 +1582,22 @@ export default class Grid extends Component {
         newCells[i + 20] += 1;
         newCells[i + 30] += 1;
         newCells[i + 40] += 1;
+        newFlashCells[i - 50] = true;
+        newFlashCells[i - 40] = true;
+        newFlashCells[i - 30] = true;
+        newFlashCells[i - 20] = true;
+        newFlashCells[i - 10] = true;
+        newFlashCells[i + 10] = true;
+        newFlashCells[i + 20] = true;
+        newFlashCells[i + 30] = true;
+        newFlashCells[i + 40] = true;
         this.setState({
-          cells: newCells
+          cells: newCells,
+          flashCells: newFlashCells
         });
+        setTimeout(() => {
+          this.setState({ flashCells: new Array(100).fill(false) });
+        }, 100);
       } else if (i === 58) {
         newCells[i - 50] += 1;
         newCells[i - 40] += 1;
@@ -829,9 +1608,22 @@ export default class Grid extends Component {
         newCells[i + 20] += 1;
         newCells[i + 30] += 1;
         newCells[i + 40] += 1;
+        newFlashCells[i - 50] = true;
+        newFlashCells[i - 40] = true;
+        newFlashCells[i - 30] = true;
+        newFlashCells[i - 20] = true;
+        newFlashCells[i - 10] = true;
+        newFlashCells[i + 10] = true;
+        newFlashCells[i + 20] = true;
+        newFlashCells[i + 30] = true;
+        newFlashCells[i + 40] = true;
         this.setState({
-          cells: newCells
+          cells: newCells,
+          flashCells: newFlashCells
         });
+        setTimeout(() => {
+          this.setState({ flashCells: new Array(100).fill(false) });
+        }, 100);
       } else {
         newCells[i - 50] += 1;
         newCells[i - 40] += 1;
@@ -842,16 +1634,34 @@ export default class Grid extends Component {
         newCells[i + 20] += 1;
         newCells[i + 30] += 1;
         newCells[i + 40] += 1;
+        newFlashCells[i - 50] = true;
+        newFlashCells[i - 40] = true;
+        newFlashCells[i - 30] = true;
+        newFlashCells[i - 20] = true;
+        newFlashCells[i - 10] = true;
+        newFlashCells[i + 10] = true;
+        newFlashCells[i + 20] = true;
+        newFlashCells[i + 30] = true;
+        newFlashCells[i + 40] = true;
         this.setState({
-          cells: newCells
+          cells: newCells,
+          flashCells: newFlashCells
         });
+        setTimeout(() => {
+          this.setState({ flashCells: new Array(100).fill(false) });
+        }, 100);
       }
       this.setState({
-        cells: newCells
+        cells: newCells,
+        flashCells: newFlashCells
       });
+      setTimeout(() => {
+        this.setState({ flashCells: new Array(100).fill(false) });
+      }, 100);
     } else if (i >= 60 && i <= 69) {
       for (let index = 60; index < 70; index++) {
         newCells[index] += 1;
+        newFlashCells[index] = true;
       }
       if (i === 60) {
         newCells[i - 60] += 1;
@@ -863,9 +1673,22 @@ export default class Grid extends Component {
         newCells[i + 10] += 1;
         newCells[i + 20] += 1;
         newCells[i + 30] += 1;
+        newFlashCells[i - 60] = true;
+        newFlashCells[i - 50] = true;
+        newFlashCells[i - 40] = true;
+        newFlashCells[i - 30] = true;
+        newFlashCells[i - 20] = true;
+        newFlashCells[i - 10] = true;
+        newFlashCells[i + 10] = true;
+        newFlashCells[i + 20] = true;
+        newFlashCells[i + 30] = true; 
         this.setState({
-          cells: newCells
+          cells: newCells,
+          flashCells: newFlashCells
         });
+        setTimeout(() => {
+          this.setState({ flashCells: new Array(100).fill(false) });
+        }, 100);
       } else if (i === 61) {
         newCells[i - 60] += 1;
         newCells[i - 50] += 1;
@@ -876,9 +1699,22 @@ export default class Grid extends Component {
         newCells[i + 10] += 1;
         newCells[i + 20] += 1;
         newCells[i + 30] += 1;
+        newFlashCells[i - 60] = true;
+        newFlashCells[i - 50] = true;
+        newFlashCells[i - 40] = true;
+        newFlashCells[i - 30] = true;
+        newFlashCells[i - 20] = true;
+        newFlashCells[i - 10] = true;
+        newFlashCells[i + 10] = true;
+        newFlashCells[i + 20] = true;
+        newFlashCells[i + 30] = true; 
         this.setState({
-          cells: newCells
+          cells: newCells,
+          flashCells: newFlashCells
         });
+        setTimeout(() => {
+          this.setState({ flashCells: new Array(100).fill(false) });
+        }, 100);
       } else if (i === 62) {
         newCells[i - 60] += 1;
         newCells[i - 50] += 1;
@@ -889,9 +1725,22 @@ export default class Grid extends Component {
         newCells[i + 10] += 1;
         newCells[i + 20] += 1;
         newCells[i + 30] += 1;
+        newFlashCells[i - 60] = true;
+        newFlashCells[i - 50] = true;
+        newFlashCells[i - 40] = true;
+        newFlashCells[i - 30] = true;
+        newFlashCells[i - 20] = true;
+        newFlashCells[i - 10] = true;
+        newFlashCells[i + 10] = true;
+        newFlashCells[i + 20] = true;
+        newFlashCells[i + 30] = true; 
         this.setState({
-          cells: newCells
+          cells: newCells,
+          flashCells: newFlashCells
         });
+        setTimeout(() => {
+          this.setState({ flashCells: new Array(100).fill(false) });
+        }, 100);
       } else if (i === 63) {
         newCells[i - 60] += 1;
         newCells[i - 50] += 1;
@@ -902,9 +1751,22 @@ export default class Grid extends Component {
         newCells[i + 10] += 1;
         newCells[i + 20] += 1;
         newCells[i + 30] += 1;
+        newFlashCells[i - 60] = true;
+        newFlashCells[i - 50] = true;
+        newFlashCells[i - 40] = true;
+        newFlashCells[i - 30] = true;
+        newFlashCells[i - 20] = true;
+        newFlashCells[i - 10] = true;
+        newFlashCells[i + 10] = true;
+        newFlashCells[i + 20] = true;
+        newFlashCells[i + 30] = true; 
         this.setState({
-          cells: newCells
+          cells: newCells,
+          flashCells: newFlashCells
         });
+        setTimeout(() => {
+          this.setState({ flashCells: new Array(100).fill(false) });
+        }, 100);
       } else if (i === 64) {
         newCells[i - 60] += 1;
         newCells[i - 50] += 1;
@@ -915,9 +1777,22 @@ export default class Grid extends Component {
         newCells[i + 10] += 1;
         newCells[i + 20] += 1;
         newCells[i + 30] += 1;
+        newFlashCells[i - 60] = true;
+        newFlashCells[i - 50] = true;
+        newFlashCells[i - 40] = true;
+        newFlashCells[i - 30] = true;
+        newFlashCells[i - 20] = true;
+        newFlashCells[i - 10] = true;
+        newFlashCells[i + 10] = true;
+        newFlashCells[i + 20] = true;
+        newFlashCells[i + 30] = true; 
         this.setState({
-          cells: newCells
+          cells: newCells,
+          flashCells: newFlashCells
         });
+        setTimeout(() => {
+          this.setState({ flashCells: new Array(100).fill(false) });
+        }, 100);
       } else if (i === 65) {
         newCells[i - 60] += 1;
         newCells[i - 50] += 1;
@@ -928,9 +1803,22 @@ export default class Grid extends Component {
         newCells[i + 10] += 1;
         newCells[i + 20] += 1;
         newCells[i + 30] += 1;
+        newFlashCells[i - 60] = true;
+        newFlashCells[i - 50] = true;
+        newFlashCells[i - 40] = true;
+        newFlashCells[i - 30] = true;
+        newFlashCells[i - 20] = true;
+        newFlashCells[i - 10] = true;
+        newFlashCells[i + 10] = true;
+        newFlashCells[i + 20] = true;
+        newFlashCells[i + 30] = true; 
         this.setState({
-          cells: newCells
+          cells: newCells,
+          flashCells: newFlashCells
         });
+        setTimeout(() => {
+          this.setState({ flashCells: new Array(100).fill(false) });
+        }, 100);
       } else if (i === 66) {
         newCells[i - 60] += 1;
         newCells[i - 50] += 1;
@@ -941,9 +1829,22 @@ export default class Grid extends Component {
         newCells[i + 10] += 1;
         newCells[i + 20] += 1;
         newCells[i + 30] += 1;
+        newFlashCells[i - 60] = true;
+        newFlashCells[i - 50] = true;
+        newFlashCells[i - 40] = true;
+        newFlashCells[i - 30] = true;
+        newFlashCells[i - 20] = true;
+        newFlashCells[i - 10] = true;
+        newFlashCells[i + 10] = true;
+        newFlashCells[i + 20] = true;
+        newFlashCells[i + 30] = true; 
         this.setState({
-          cells: newCells
+          cells: newCells,
+          flashCells: newFlashCells
         });
+        setTimeout(() => {
+          this.setState({ flashCells: new Array(100).fill(false) });
+        }, 100);
       } else if (i === 67) {
         newCells[i - 60] += 1;
         newCells[i - 50] += 1;
@@ -954,9 +1855,22 @@ export default class Grid extends Component {
         newCells[i + 10] += 1;
         newCells[i + 20] += 1;
         newCells[i + 30] += 1;
+        newFlashCells[i - 60] = true;
+        newFlashCells[i - 50] = true;
+        newFlashCells[i - 40] = true;
+        newFlashCells[i - 30] = true;
+        newFlashCells[i - 20] = true;
+        newFlashCells[i - 10] = true;
+        newFlashCells[i + 10] = true;
+        newFlashCells[i + 20] = true;
+        newFlashCells[i + 30] = true; 
         this.setState({
-          cells: newCells
+          cells: newCells,
+          flashCells: newFlashCells
         });
+        setTimeout(() => {
+          this.setState({ flashCells: new Array(100).fill(false) });
+        }, 100);
       } else if (i === 68) {
         newCells[i - 60] += 1;
         newCells[i - 50] += 1;
@@ -967,9 +1881,22 @@ export default class Grid extends Component {
         newCells[i + 10] += 1;
         newCells[i + 20] += 1;
         newCells[i + 30] += 1;
+        newFlashCells[i - 60] = true;
+        newFlashCells[i - 50] = true;
+        newFlashCells[i - 40] = true;
+        newFlashCells[i - 30] = true;
+        newFlashCells[i - 20] = true;
+        newFlashCells[i - 10] = true;
+        newFlashCells[i + 10] = true;
+        newFlashCells[i + 20] = true;
+        newFlashCells[i + 30] = true; 
         this.setState({
-          cells: newCells
+          cells: newCells,
+          flashCells: newFlashCells
         });
+        setTimeout(() => {
+          this.setState({ flashCells: new Array(100).fill(false) });
+        }, 100);
       } else {
         newCells[i - 60] += 1;
         newCells[i - 50] += 1;
@@ -980,16 +1907,34 @@ export default class Grid extends Component {
         newCells[i + 10] += 1;
         newCells[i + 20] += 1;
         newCells[i + 30] += 1;
+        newFlashCells[i - 60] = true;
+        newFlashCells[i - 50] = true;
+        newFlashCells[i - 40] = true;
+        newFlashCells[i - 30] = true;
+        newFlashCells[i - 20] = true;
+        newFlashCells[i - 10] = true;
+        newFlashCells[i + 10] = true;
+        newFlashCells[i + 20] = true;
+        newFlashCells[i + 30] = true; 
         this.setState({
-          cells: newCells
+          cells: newCells,
+          flashCells: newFlashCells
         });
+        setTimeout(() => {
+          this.setState({ flashCells: new Array(100).fill(false) });
+        }, 100);
       }
       this.setState({
-        cells: newCells
+        cells: newCells,
+        flashCells: newFlashCells
       });
+      setTimeout(() => {
+        this.setState({ flashCells: new Array(100).fill(false) });
+      }, 100);
     } else if (i >= 70 && i <= 79) {
       for (let index = 70; index < 80; index++) {
         newCells[index] += 1;
+        newFlashCells[index] = true;
       }
       if (i === 70) {
         newCells[i - 70] += 1;
@@ -1001,9 +1946,22 @@ export default class Grid extends Component {
         newCells[i - 10] += 1;
         newCells[i + 10] += 1;
         newCells[i + 20] += 1;
+        newFlashCells[i - 70] = true;
+        newFlashCells[i - 60] = true;
+        newFlashCells[i - 50] = true;
+        newFlashCells[i - 40] = true;
+        newFlashCells[i - 30] = true;
+        newFlashCells[i - 20] = true;
+        newFlashCells[i - 10] = true;
+        newFlashCells[i + 10] = true;
+        newFlashCells[i + 20] = true;
         this.setState({
-          cells: newCells
+          cells: newCells,
+          flashCells: newFlashCells
         });
+        setTimeout(() => {
+          this.setState({ flashCells: new Array(100).fill(false) });
+        }, 100);
       } else if (i === 71) {
         newCells[i - 70] += 1;
         newCells[i - 60] += 1;
@@ -1014,9 +1972,22 @@ export default class Grid extends Component {
         newCells[i - 10] += 1;
         newCells[i + 10] += 1;
         newCells[i + 20] += 1;
+        newFlashCells[i - 70] = true;
+        newFlashCells[i - 60] = true;
+        newFlashCells[i - 50] = true;
+        newFlashCells[i - 40] = true;
+        newFlashCells[i - 30] = true;
+        newFlashCells[i - 20] = true;
+        newFlashCells[i - 10] = true;
+        newFlashCells[i + 10] = true;
+        newFlashCells[i + 20] = true;
         this.setState({
-          cells: newCells
+          cells: newCells,
+          flashCells: newFlashCells
         });
+        setTimeout(() => {
+          this.setState({ flashCells: new Array(100).fill(false) });
+        }, 100);
       } else if (i === 72) {
         newCells[i - 70] += 1;
         newCells[i - 60] += 1;
@@ -1027,9 +1998,22 @@ export default class Grid extends Component {
         newCells[i - 10] += 1;
         newCells[i + 10] += 1;
         newCells[i + 20] += 1;
+        newFlashCells[i - 70] = true;
+        newFlashCells[i - 60] = true;
+        newFlashCells[i - 50] = true;
+        newFlashCells[i - 40] = true;
+        newFlashCells[i - 30] = true;
+        newFlashCells[i - 20] = true;
+        newFlashCells[i - 10] = true;
+        newFlashCells[i + 10] = true;
+        newFlashCells[i + 20] = true;
         this.setState({
-          cells: newCells
+          cells: newCells,
+          flashCells: newFlashCells
         });
+        setTimeout(() => {
+          this.setState({ flashCells: new Array(100).fill(false) });
+        }, 100);
       } else if (i === 73) {
         newCells[i - 70] += 1;
         newCells[i - 60] += 1;
@@ -1040,9 +2024,22 @@ export default class Grid extends Component {
         newCells[i - 10] += 1;
         newCells[i + 10] += 1;
         newCells[i + 20] += 1;
+        newFlashCells[i - 70] = true;
+        newFlashCells[i - 60] = true;
+        newFlashCells[i - 50] = true;
+        newFlashCells[i - 40] = true;
+        newFlashCells[i - 30] = true;
+        newFlashCells[i - 20] = true;
+        newFlashCells[i - 10] = true;
+        newFlashCells[i + 10] = true;
+        newFlashCells[i + 20] = true;
         this.setState({
-          cells: newCells
+          cells: newCells,
+          flashCells: newFlashCells
         });
+        setTimeout(() => {
+          this.setState({ flashCells: new Array(100).fill(false) });
+        }, 100);
       } else if (i === 74) {
         newCells[i - 70] += 1;
         newCells[i - 60] += 1;
@@ -1053,9 +2050,22 @@ export default class Grid extends Component {
         newCells[i - 10] += 1;
         newCells[i + 10] += 1;
         newCells[i + 20] += 1;
+        newFlashCells[i - 70] = true;
+        newFlashCells[i - 60] = true;
+        newFlashCells[i - 50] = true;
+        newFlashCells[i - 40] = true;
+        newFlashCells[i - 30] = true;
+        newFlashCells[i - 20] = true;
+        newFlashCells[i - 10] = true;
+        newFlashCells[i + 10] = true;
+        newFlashCells[i + 20] = true;
         this.setState({
-          cells: newCells
+          cells: newCells,
+          flashCells: newFlashCells
         });
+        setTimeout(() => {
+          this.setState({ flashCells: new Array(100).fill(false) });
+        }, 100);
       } else if (i === 75) {
         newCells[i - 70] += 1;
         newCells[i - 60] += 1;
@@ -1066,9 +2076,22 @@ export default class Grid extends Component {
         newCells[i - 10] += 1;
         newCells[i + 10] += 1;
         newCells[i + 20] += 1;
+        newFlashCells[i - 70] = true;
+        newFlashCells[i - 60] = true;
+        newFlashCells[i - 50] = true;
+        newFlashCells[i - 40] = true;
+        newFlashCells[i - 30] = true;
+        newFlashCells[i - 20] = true;
+        newFlashCells[i - 10] = true;
+        newFlashCells[i + 10] = true;
+        newFlashCells[i + 20] = true;
         this.setState({
-          cells: newCells
+          cells: newCells,
+          flashCells: newFlashCells
         });
+        setTimeout(() => {
+          this.setState({ flashCells: new Array(100).fill(false) });
+        }, 100);
       } else if (i === 76) {
         newCells[i - 70] += 1;
         newCells[i - 60] += 1;
@@ -1079,9 +2102,22 @@ export default class Grid extends Component {
         newCells[i - 10] += 1;
         newCells[i + 10] += 1;
         newCells[i + 20] += 1;
+        newFlashCells[i - 70] = true;
+        newFlashCells[i - 60] = true;
+        newFlashCells[i - 50] = true;
+        newFlashCells[i - 40] = true;
+        newFlashCells[i - 30] = true;
+        newFlashCells[i - 20] = true;
+        newFlashCells[i - 10] = true;
+        newFlashCells[i + 10] = true;
+        newFlashCells[i + 20] = true;
         this.setState({
-          cells: newCells
+          cells: newCells,
+          flashCells: newFlashCells
         });
+        setTimeout(() => {
+          this.setState({ flashCells: new Array(100).fill(false) });
+        }, 100);
       } else if (i === 77) {
         newCells[i - 70] += 1;
         newCells[i - 60] += 1;
@@ -1092,9 +2128,22 @@ export default class Grid extends Component {
         newCells[i - 10] += 1;
         newCells[i + 10] += 1;
         newCells[i + 20] += 1;
+        newFlashCells[i - 70] = true;
+        newFlashCells[i - 60] = true;
+        newFlashCells[i - 50] = true;
+        newFlashCells[i - 40] = true;
+        newFlashCells[i - 30] = true;
+        newFlashCells[i - 20] = true;
+        newFlashCells[i - 10] = true;
+        newFlashCells[i + 10] = true;
+        newFlashCells[i + 20] = true;
         this.setState({
-          cells: newCells
+          cells: newCells,
+          flashCells: newFlashCells
         });
+        setTimeout(() => {
+          this.setState({ flashCells: new Array(100).fill(false) });
+        }, 100);
       } else if (i === 78) {
         newCells[i - 70] += 1;
         newCells[i - 60] += 1;
@@ -1105,9 +2154,22 @@ export default class Grid extends Component {
         newCells[i - 10] += 1;
         newCells[i + 10] += 1;
         newCells[i + 20] += 1;
+        newFlashCells[i - 70] = true;
+        newFlashCells[i - 60] = true;
+        newFlashCells[i - 50] = true;
+        newFlashCells[i - 40] = true;
+        newFlashCells[i - 30] = true;
+        newFlashCells[i - 20] = true;
+        newFlashCells[i - 10] = true;
+        newFlashCells[i + 10] = true;
+        newFlashCells[i + 20] = true;
         this.setState({
-          cells: newCells
+          cells: newCells,
+          flashCells: newFlashCells
         });
+        setTimeout(() => {
+          this.setState({ flashCells: new Array(100).fill(false) });
+        }, 100);
       } else {
         newCells[i - 70] += 1;
         newCells[i - 60] += 1;
@@ -1118,16 +2180,34 @@ export default class Grid extends Component {
         newCells[i - 10] += 1;
         newCells[i + 10] += 1;
         newCells[i + 20] += 1;
+        newFlashCells[i - 70] = true;
+        newFlashCells[i - 60] = true;
+        newFlashCells[i - 50] = true;
+        newFlashCells[i - 40] = true;
+        newFlashCells[i - 30] = true;
+        newFlashCells[i - 20] = true;
+        newFlashCells[i - 10] = true;
+        newFlashCells[i + 10] = true;
+        newFlashCells[i + 20] = true;
         this.setState({
-          cells: newCells
+          cells: newCells,
+          flashCells: newFlashCells
         });
+        setTimeout(() => {
+          this.setState({ flashCells: new Array(100).fill(false) });
+        }, 100);
       }
       this.setState({
-        cells: newCells
+        cells: newCells,
+        flashCells: newFlashCells
       });
+      setTimeout(() => {
+        this.setState({ flashCells: new Array(100).fill(false) });
+      }, 100);
     } else if (i >= 80 && i <= 89) {
       for (let index = 80; index < 90; index++) {
         newCells[index] += 1;
+        newFlashCells[index] = true;
       }
       if (i === 80) {
         newCells[i - 80] += 1;
@@ -1139,9 +2219,22 @@ export default class Grid extends Component {
         newCells[i - 20] += 1;
         newCells[i - 10] += 1;
         newCells[i + 10] += 1;
+        newFlashCells[i - 80] = true;
+        newFlashCells[i - 70] = true;
+        newFlashCells[i - 60] = true;
+        newFlashCells[i - 50] = true;
+        newFlashCells[i - 40] = true;
+        newFlashCells[i - 30] = true;
+        newFlashCells[i - 20] = true;
+        newFlashCells[i - 10] = true;
+        newFlashCells[i + 10] = true;
         this.setState({
-          cells: newCells
+          cells: newCells,
+          flashCells: newFlashCells
         });
+        setTimeout(() => {
+          this.setState({ flashCells: new Array(100).fill(false) });
+        }, 100);
       } else if (i === 81) {
         newCells[i - 80] += 1;
         newCells[i - 70] += 1;
@@ -1152,9 +2245,22 @@ export default class Grid extends Component {
         newCells[i - 20] += 1;
         newCells[i - 10] += 1;
         newCells[i + 10] += 1;
+        newFlashCells[i - 80] = true;
+        newFlashCells[i - 70] = true;
+        newFlashCells[i - 60] = true;
+        newFlashCells[i - 50] = true;
+        newFlashCells[i - 40] = true;
+        newFlashCells[i - 30] = true;
+        newFlashCells[i - 20] = true;
+        newFlashCells[i - 10] = true;
+        newFlashCells[i + 10] = true;
         this.setState({
-          cells: newCells
+          cells: newCells,
+          flashCells: newFlashCells
         });
+        setTimeout(() => {
+          this.setState({ flashCells: new Array(100).fill(false) });
+        }, 100);
       } else if (i === 82) {
         newCells[i - 80] += 1;
         newCells[i - 70] += 1;
@@ -1165,9 +2271,22 @@ export default class Grid extends Component {
         newCells[i - 20] += 1;
         newCells[i - 10] += 1;
         newCells[i + 10] += 1;
+        newFlashCells[i - 80] = true;
+        newFlashCells[i - 70] = true;
+        newFlashCells[i - 60] = true;
+        newFlashCells[i - 50] = true;
+        newFlashCells[i - 40] = true;
+        newFlashCells[i - 30] = true;
+        newFlashCells[i - 20] = true;
+        newFlashCells[i - 10] = true;
+        newFlashCells[i + 10] = true;
         this.setState({
-          cells: newCells
+          cells: newCells,
+          flashCells: newFlashCells
         });
+        setTimeout(() => {
+          this.setState({ flashCells: new Array(100).fill(false) });
+        }, 100);
       } else if (i === 83) {
         newCells[i - 80] += 1;
         newCells[i - 70] += 1;
@@ -1178,9 +2297,22 @@ export default class Grid extends Component {
         newCells[i - 20] += 1;
         newCells[i - 10] += 1;
         newCells[i + 10] += 1;
+        newFlashCells[i - 80] = true;
+        newFlashCells[i - 70] = true;
+        newFlashCells[i - 60] = true;
+        newFlashCells[i - 50] = true;
+        newFlashCells[i - 40] = true;
+        newFlashCells[i - 30] = true;
+        newFlashCells[i - 20] = true;
+        newFlashCells[i - 10] = true;
+        newFlashCells[i + 10] = true;
         this.setState({
-          cells: newCells
+          cells: newCells,
+          flashCells: newFlashCells
         });
+        setTimeout(() => {
+          this.setState({ flashCells: new Array(100).fill(false) });
+        }, 100);
       } else if (i === 84) {
         newCells[i - 80] += 1;
         newCells[i - 70] += 1;
@@ -1191,9 +2323,22 @@ export default class Grid extends Component {
         newCells[i - 20] += 1;
         newCells[i - 10] += 1;
         newCells[i + 10] += 1;
+        newFlashCells[i - 80] = true;
+        newFlashCells[i - 70] = true;
+        newFlashCells[i - 60] = true;
+        newFlashCells[i - 50] = true;
+        newFlashCells[i - 40] = true;
+        newFlashCells[i - 30] = true;
+        newFlashCells[i - 20] = true;
+        newFlashCells[i - 10] = true;
+        newFlashCells[i + 10] = true;
         this.setState({
-          cells: newCells
+          cells: newCells,
+          flashCells: newFlashCells
         });
+        setTimeout(() => {
+          this.setState({ flashCells: new Array(100).fill(false) });
+        }, 100);
       } else if (i === 85) {
         newCells[i - 80] += 1;
         newCells[i - 70] += 1;
@@ -1204,9 +2349,22 @@ export default class Grid extends Component {
         newCells[i - 20] += 1;
         newCells[i - 10] += 1;
         newCells[i + 10] += 1;
+        newFlashCells[i - 80] = true;
+        newFlashCells[i - 70] = true;
+        newFlashCells[i - 60] = true;
+        newFlashCells[i - 50] = true;
+        newFlashCells[i - 40] = true;
+        newFlashCells[i - 30] = true;
+        newFlashCells[i - 20] = true;
+        newFlashCells[i - 10] = true;
+        newFlashCells[i + 10] = true;
         this.setState({
-          cells: newCells
+          cells: newCells,
+          flashCells: newFlashCells
         });
+        setTimeout(() => {
+          this.setState({ flashCells: new Array(100).fill(false) });
+        }, 100);
       } else if (i === 86) {
         newCells[i - 80] += 1;
         newCells[i - 70] += 1;
@@ -1217,9 +2375,22 @@ export default class Grid extends Component {
         newCells[i - 20] += 1;
         newCells[i - 10] += 1;
         newCells[i + 10] += 1;
+        newFlashCells[i - 80] = true;
+        newFlashCells[i - 70] = true;
+        newFlashCells[i - 60] = true;
+        newFlashCells[i - 50] = true;
+        newFlashCells[i - 40] = true;
+        newFlashCells[i - 30] = true;
+        newFlashCells[i - 20] = true;
+        newFlashCells[i - 10] = true;
+        newFlashCells[i + 10] = true;
         this.setState({
-          cells: newCells
+          cells: newCells,
+          flashCells: newFlashCells
         });
+        setTimeout(() => {
+          this.setState({ flashCells: new Array(100).fill(false) });
+        }, 100);
       } else if (i === 87) {
         newCells[i - 80] += 1;
         newCells[i - 70] += 1;
@@ -1230,9 +2401,22 @@ export default class Grid extends Component {
         newCells[i - 20] += 1;
         newCells[i - 10] += 1;
         newCells[i + 10] += 1;
+        newFlashCells[i - 80] = true;
+        newFlashCells[i - 70] = true;
+        newFlashCells[i - 60] = true;
+        newFlashCells[i - 50] = true;
+        newFlashCells[i - 40] = true;
+        newFlashCells[i - 30] = true;
+        newFlashCells[i - 20] = true;
+        newFlashCells[i - 10] = true;
+        newFlashCells[i + 10] = true;
         this.setState({
-          cells: newCells
+          cells: newCells,
+          flashCells: newFlashCells
         });
+        setTimeout(() => {
+          this.setState({ flashCells: new Array(100).fill(false) });
+        }, 100);
       } else if (i === 88) {
         newCells[i - 80] += 1;
         newCells[i - 70] += 1;
@@ -1243,9 +2427,22 @@ export default class Grid extends Component {
         newCells[i - 20] += 1;
         newCells[i - 10] += 1;
         newCells[i + 10] += 1;
+        newFlashCells[i - 80] = true;
+        newFlashCells[i - 70] = true;
+        newFlashCells[i - 60] = true;
+        newFlashCells[i - 50] = true;
+        newFlashCells[i - 40] = true;
+        newFlashCells[i - 30] = true;
+        newFlashCells[i - 20] = true;
+        newFlashCells[i - 10] = true;
+        newFlashCells[i + 10] = true;
         this.setState({
-          cells: newCells
+          cells: newCells,
+          flashCells: newFlashCells
         });
+        setTimeout(() => {
+          this.setState({ flashCells: new Array(100).fill(false) });
+        }, 100);
       } else {
         newCells[i - 80] += 1;
         newCells[i - 70] += 1;
@@ -1256,16 +2453,34 @@ export default class Grid extends Component {
         newCells[i - 20] += 1;
         newCells[i - 10] += 1;
         newCells[i + 10] += 1;
+        newFlashCells[i - 80] = true;
+        newFlashCells[i - 70] = true;
+        newFlashCells[i - 60] = true;
+        newFlashCells[i - 50] = true;
+        newFlashCells[i - 40] = true;
+        newFlashCells[i - 30] = true;
+        newFlashCells[i - 20] = true;
+        newFlashCells[i - 10] = true;
+        newFlashCells[i + 10] = true;
         this.setState({
-          cells: newCells
+          cells: newCells,
+          flashCells: newFlashCells
         });
+        setTimeout(() => {
+          this.setState({ flashCells: new Array(100).fill(false) });
+        }, 100);
       }
       this.setState({
-        cells: newCells
+        cells: newCells,
+        flashCells: newFlashCells
       });
+      setTimeout(() => {
+        this.setState({ flashCells: new Array(100).fill(false) });
+      }, 100);
     } else {
       for (let index = 90; index < 100; index++) {
         newCells[index] += 1;
+        newFlashCells[index] = true;
       }
       if (i === 90) {
         newCells[i - 90] += 1;
@@ -1277,9 +2492,22 @@ export default class Grid extends Component {
         newCells[i - 30] += 1;
         newCells[i - 20] += 1;
         newCells[i - 10] += 1;
+        newFlashCells[i - 90] = true;
+        newFlashCells[i - 80] = true;
+        newFlashCells[i - 70] = true;
+        newFlashCells[i - 60] = true;
+        newFlashCells[i - 50] = true;
+        newFlashCells[i - 40] = true;
+        newFlashCells[i - 30] = true;
+        newFlashCells[i - 20] = true;
+        newFlashCells[i - 10] = true;
         this.setState({
-          cells: newCells
+          cells: newCells,
+          flashCells: newFlashCells
         });
+        setTimeout(() => {
+          this.setState({ flashCells: new Array(100).fill(false) });
+        }, 100);
       } else if (i === 91) {
         newCells[i - 90] += 1;
         newCells[i - 80] += 1;
@@ -1290,9 +2518,22 @@ export default class Grid extends Component {
         newCells[i - 30] += 1;
         newCells[i - 20] += 1;
         newCells[i - 10] += 1;
+        newFlashCells[i - 90] = true;
+        newFlashCells[i - 80] = true;
+        newFlashCells[i - 70] = true;
+        newFlashCells[i - 60] = true;
+        newFlashCells[i - 50] = true;
+        newFlashCells[i - 40] = true;
+        newFlashCells[i - 30] = true;
+        newFlashCells[i - 20] = true;
+        newFlashCells[i - 10] = true;
         this.setState({
-          cells: newCells
+          cells: newCells,
+          flashCells: newFlashCells
         });
+        setTimeout(() => {
+          this.setState({ flashCells: new Array(100).fill(false) });
+        }, 100);
       } else if (i === 92) {
         newCells[i - 90] += 1;
         newCells[i - 80] += 1;
@@ -1303,9 +2544,22 @@ export default class Grid extends Component {
         newCells[i - 30] += 1;
         newCells[i - 20] += 1;
         newCells[i - 10] += 1;
+        newFlashCells[i - 90] = true;
+        newFlashCells[i - 80] = true;
+        newFlashCells[i - 70] = true;
+        newFlashCells[i - 60] = true;
+        newFlashCells[i - 50] = true;
+        newFlashCells[i - 40] = true;
+        newFlashCells[i - 30] = true;
+        newFlashCells[i - 20] = true;
+        newFlashCells[i - 10] = true;
         this.setState({
-          cells: newCells
+          cells: newCells,
+          flashCells: newFlashCells
         });
+        setTimeout(() => {
+          this.setState({ flashCells: new Array(100).fill(false) });
+        }, 100);
       } else if (i === 93) {
         newCells[i - 90] += 1;
         newCells[i - 80] += 1;
@@ -1316,9 +2570,22 @@ export default class Grid extends Component {
         newCells[i - 30] += 1;
         newCells[i - 20] += 1;
         newCells[i - 10] += 1;
+        newFlashCells[i - 90] = true;
+        newFlashCells[i - 80] = true;
+        newFlashCells[i - 70] = true;
+        newFlashCells[i - 60] = true;
+        newFlashCells[i - 50] = true;
+        newFlashCells[i - 40] = true;
+        newFlashCells[i - 30] = true;
+        newFlashCells[i - 20] = true;
+        newFlashCells[i - 10] = true;
         this.setState({
-          cells: newCells
+          cells: newCells,
+          flashCells: newFlashCells
         });
+        setTimeout(() => {
+          this.setState({ flashCells: new Array(100).fill(false) });
+        }, 100);
       } else if (i === 94) {
         newCells[i - 90] += 1;
         newCells[i - 80] += 1;
@@ -1329,9 +2596,22 @@ export default class Grid extends Component {
         newCells[i - 30] += 1;
         newCells[i - 20] += 1;
         newCells[i - 10] += 1;
+        newFlashCells[i - 90] = true;
+        newFlashCells[i - 80] = true;
+        newFlashCells[i - 70] = true;
+        newFlashCells[i - 60] = true;
+        newFlashCells[i - 50] = true;
+        newFlashCells[i - 40] = true;
+        newFlashCells[i - 30] = true;
+        newFlashCells[i - 20] = true;
+        newFlashCells[i - 10] = true;
         this.setState({
-          cells: newCells
+          cells: newCells,
+          flashCells: newFlashCells
         });
+        setTimeout(() => {
+          this.setState({ flashCells: new Array(100).fill(false) });
+        }, 100);
       } else if (i === 95) {
         newCells[i - 90] += 1;
         newCells[i - 80] += 1;
@@ -1342,9 +2622,22 @@ export default class Grid extends Component {
         newCells[i - 30] += 1;
         newCells[i - 20] += 1;
         newCells[i - 10] += 1;
+        newFlashCells[i - 90] = true;
+        newFlashCells[i - 80] = true;
+        newFlashCells[i - 70] = true;
+        newFlashCells[i - 60] = true;
+        newFlashCells[i - 50] = true;
+        newFlashCells[i - 40] = true;
+        newFlashCells[i - 30] = true;
+        newFlashCells[i - 20] = true;
+        newFlashCells[i - 10] = true;
         this.setState({
-          cells: newCells
+          cells: newCells,
+          flashCells: newFlashCells
         });
+        setTimeout(() => {
+          this.setState({ flashCells: new Array(100).fill(false) });
+        }, 100);
       } else if (i === 96) {
         newCells[i - 90] += 1;
         newCells[i - 80] += 1;
@@ -1355,9 +2648,22 @@ export default class Grid extends Component {
         newCells[i - 30] += 1;
         newCells[i - 20] += 1;
         newCells[i - 10] += 1;
+        newFlashCells[i - 90] = true;
+        newFlashCells[i - 80] = true;
+        newFlashCells[i - 70] = true;
+        newFlashCells[i - 60] = true;
+        newFlashCells[i - 50] = true;
+        newFlashCells[i - 40] = true;
+        newFlashCells[i - 30] = true;
+        newFlashCells[i - 20] = true;
+        newFlashCells[i - 10] = true;
         this.setState({
-          cells: newCells
+          cells: newCells,
+          flashCells: newFlashCells
         });
+        setTimeout(() => {
+          this.setState({ flashCells: new Array(100).fill(false) });
+        }, 100);
       } else if (i === 97) {
         newCells[i - 90] += 1;
         newCells[i - 80] += 1;
@@ -1368,9 +2674,22 @@ export default class Grid extends Component {
         newCells[i - 30] += 1;
         newCells[i - 20] += 1;
         newCells[i - 10] += 1;
+        newFlashCells[i - 90] = true;
+        newFlashCells[i - 80] = true;
+        newFlashCells[i - 70] = true;
+        newFlashCells[i - 60] = true;
+        newFlashCells[i - 50] = true;
+        newFlashCells[i - 40] = true;
+        newFlashCells[i - 30] = true;
+        newFlashCells[i - 20] = true;
+        newFlashCells[i - 10] = true;
         this.setState({
-          cells: newCells
+          cells: newCells,
+          flashCells: newFlashCells
         });
+        setTimeout(() => {
+          this.setState({ flashCells: new Array(100).fill(false) });
+        }, 100);
       } else if (i === 98) {
         newCells[i - 90] += 1;
         newCells[i - 80] += 1;
@@ -1381,9 +2700,22 @@ export default class Grid extends Component {
         newCells[i - 30] += 1;
         newCells[i - 20] += 1;
         newCells[i - 10] += 1;
+        newFlashCells[i - 90] = true;
+        newFlashCells[i - 80] = true;
+        newFlashCells[i - 70] = true;
+        newFlashCells[i - 60] = true;
+        newFlashCells[i - 50] = true;
+        newFlashCells[i - 40] = true;
+        newFlashCells[i - 30] = true;
+        newFlashCells[i - 20] = true;
+        newFlashCells[i - 10] = true;
         this.setState({
-          cells: newCells
+          cells: newCells,
+          flashCells: newFlashCells
         });
+        setTimeout(() => {
+          this.setState({ flashCells: new Array(100).fill(false) });
+        }, 100);
       } else {
         newCells[i - 90] += 1;
         newCells[i - 80] += 1;
@@ -1394,21 +2726,31 @@ export default class Grid extends Component {
         newCells[i - 30] += 1;
         newCells[i - 20] += 1;
         newCells[i - 10] += 1;
+        newFlashCells[i - 90] = true;
+        newFlashCells[i - 80] = true;
+        newFlashCells[i - 70] = true;
+        newFlashCells[i - 60] = true;
+        newFlashCells[i - 50] = true;
+        newFlashCells[i - 40] = true;
+        newFlashCells[i - 30] = true;
+        newFlashCells[i - 20] = true;
+        newFlashCells[i - 10] = true;
         this.setState({
-          cells: newCells
+          cells: newCells,
+          flashCells: newFlashCells
         });
+        setTimeout(() => {
+          this.setState({ flashCells: new Array(100).fill(false) });
+        }, 100);
       }
       this.setState({
-        cells: newCells
+        cells: newCells,
+        flashCells: newFlashCells
       });
+      setTimeout(() => {
+        this.setState({ flashCells: new Array(100).fill(false) });
+      }, 100);
     }
-    this.setState({
-      cells: newCells,
-      highlight: true
-    });
-    setTimeout(() => {
-      this.setState({ highlight: false });
-    }, 100);
   };
 
   render() {

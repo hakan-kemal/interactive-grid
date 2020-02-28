@@ -2,14 +2,13 @@
 import React from 'react';
 
 function Cell(props) {
-  const { onClick, count, highlight } = props;
+  const { onClick, count, flashCell } = props;
 
   //   const [color, setColor] = useState(false);
   //           setColor(true);
 
   return (
-    <div className={highlight ? 'CellOne' : 'CellTwo'}>
-      <button onClick={onClick}>Click</button>
+    <div onClick={onClick} className={flashCell ? 'CellOne' : 'CellTwo'}>
       <p>{count}</p>
     </div>
   );
