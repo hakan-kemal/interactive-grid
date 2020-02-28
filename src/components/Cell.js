@@ -1,10 +1,14 @@
+// import React, { useState } from 'react';
 import React from 'react';
 
 function Cell(props) {
-  const { onClick, count, lightsUp } = props;
+  const { onClick, count, highlight } = props;
+
+  //   const [color, setColor] = useState(false);
+  //           setColor(true);
 
   return (
-    <div className='Cell' style={lightsUp}>
+    <div className={highlight ? 'CellOne' : 'CellTwo'}>
       <button onClick={onClick}>Click</button>
       <p>{count}</p>
     </div>
@@ -12,3 +16,5 @@ function Cell(props) {
 }
 
 export default Cell;
+
+/* <div className={`Cell ${color ? 'Yellow' : ''}`}></div> */

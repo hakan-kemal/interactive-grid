@@ -4,7 +4,7 @@ import Cell from './Cell';
 export default class Grid extends Component {
   state = {
     cells: new Array(100).fill(0),
-    color: 'white'
+    highlight: false
   };
 
   renderCell(i) {
@@ -12,10 +12,12 @@ export default class Grid extends Component {
       <Cell
         count={this.state.cells[i]}
         onClick={() => this.onClick(i)}
-        lightsUp={{ backgroundColor: this.state.color }}
+        highlight={this.state.highlight}
       />
     );
   }
+
+  handleClick = () => {};
 
   onClick = i => {
     let newCells = [...this.state.cells];
@@ -1401,14 +1403,23 @@ export default class Grid extends Component {
       });
     }
     this.setState({
-      cells: newCells
+      cells: newCells,
+      highlight: true
     });
+    setTimeout(() => {
+      this.setState({ highlight: false });
+    }, 100);
   };
 
   render() {
     return (
       <div className='Grid'>
         <div>
+          {/* <Cell onClick={this.onClick} count={this.state.countArray[0]} /> */}
+          {/* <Cell onClick={this.onClick} count={this.state.countArray[1]} /> */}
+          {/* <Cell onClick={this.onClick} count={this.state.countArray[2]} /> */}
+          {/* <Cell onClick={this.onClick} count={this.state.countArray[3]} /> */}
+          {/* <Cell onClick={this.onClick} count={this.state.countArray[4]} /> */}
           {this.renderCell(0)}
           {this.renderCell(1)}
           {this.renderCell(2)}
@@ -1532,3 +1543,5 @@ export default class Grid extends Component {
     );
   }
 }
+
+// lightsUp={{ backgroundColor: this.state.color }}

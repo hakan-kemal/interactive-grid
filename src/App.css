@@ -24,3 +24,27 @@
   float: left;
   background-color: whitesmoke;
 }
+
+.Yellow {
+  background-color: yellow;
+}
+
+.CellTwo {
+  margin: 10px;
+  border: 5px solid green;
+  padding: 5px;
+  float: left;
+  background-color: whitesmoke;
+}
+
+.CellOne {
+  margin: 10px;
+  border: 5px solid green;
+  padding: 5px;
+  float: left;
+  background-color: yellow;
+}
+
+.White {
+  background-color: whitesmoke;
+}
