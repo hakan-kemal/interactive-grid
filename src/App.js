@@ -7,7 +7,7 @@ function App() {
     <div className='App'>
       <main className='App-main'>
         <h2>Interactive Grid 50x50</h2>
-        <h4>Test grid 5x5</h4>
+        <h4>Test grid 10x10</h4>
         <Grid />
       </main>
     </div>

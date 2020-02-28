@@ -1,11 +1,14 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-export default class Cell extends Component {
-  render() {
-    return (
-      <div className='Cell'>
-        <h2>Cell</h2>
-      </div>
-    );
-  }
+function Cell(props) {
+  const { onClick, count, lightsUp } = props;
+
+  return (
+    <div className='Cell' style={lightsUp}>
+      <button onClick={onClick}>Click</button>
+      <p>{count}</p>
+    </div>
+  );
 }
+
+export default Cell;
