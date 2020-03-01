@@ -1,11 +1,7 @@
-// import React, { useState } from 'react';
 import React from 'react';
 
 function Cell(props) {
   const { onClick, count, flashCell } = props;
-
-  //   const [color, setColor] = useState(false);
-  //           setColor(true);
 
   return (
     <div onClick={onClick} className={flashCell ? 'CellOne' : 'CellTwo'}>
@@ -16,4 +12,18 @@ function Cell(props) {
 
 export default Cell;
 
-/* <div className={`Cell ${color ? 'Yellow' : ''}`}></div> */
+// import React from 'react';
+
+// export default function Cell(props) {
+//   const { onClick, cells, flashCells } = props;
+
+//   return (
+//     <div>
+//       {cells.map((cell, index) => (
+//         <div onClick={onClick} className={flashCells[index] ? 'CellOne' : 'CellTwo'} key={index}>
+//           <p>{cell}</p>
+//         </div>
+//       ))}
+//     </div>
+//   );
+// }

@@ -17,6 +17,11 @@ export default class Grid extends Component {
     );
   }
 
+  containsFibonacciSequence = (main, sub) => {
+    let status = sub.every((i => v => (i = main.indexOf(v, i) + 1))(0));
+    return status;
+  }
+
   onClick = i => {
     let newCells = [...this.state.cells];
     let newFlashCells = [...this.state.flashCells];
@@ -1681,7 +1686,7 @@ export default class Grid extends Component {
         newFlashCells[i - 10] = true;
         newFlashCells[i + 10] = true;
         newFlashCells[i + 20] = true;
-        newFlashCells[i + 30] = true; 
+        newFlashCells[i + 30] = true;
         this.setState({
           cells: newCells,
           flashCells: newFlashCells
@@ -1707,7 +1712,7 @@ export default class Grid extends Component {
         newFlashCells[i - 10] = true;
         newFlashCells[i + 10] = true;
         newFlashCells[i + 20] = true;
-        newFlashCells[i + 30] = true; 
+        newFlashCells[i + 30] = true;
         this.setState({
           cells: newCells,
           flashCells: newFlashCells
@@ -1733,7 +1738,7 @@ export default class Grid extends Component {
         newFlashCells[i - 10] = true;
         newFlashCells[i + 10] = true;
         newFlashCells[i + 20] = true;
-        newFlashCells[i + 30] = true; 
+        newFlashCells[i + 30] = true;
         this.setState({
           cells: newCells,
           flashCells: newFlashCells
@@ -1759,7 +1764,7 @@ export default class Grid extends Component {
         newFlashCells[i - 10] = true;
         newFlashCells[i + 10] = true;
         newFlashCells[i + 20] = true;
-        newFlashCells[i + 30] = true; 
+        newFlashCells[i + 30] = true;
         this.setState({
           cells: newCells,
           flashCells: newFlashCells
@@ -1785,7 +1790,7 @@ export default class Grid extends Component {
         newFlashCells[i - 10] = true;
         newFlashCells[i + 10] = true;
         newFlashCells[i + 20] = true;
-        newFlashCells[i + 30] = true; 
+        newFlashCells[i + 30] = true;
         this.setState({
           cells: newCells,
           flashCells: newFlashCells
@@ -1811,7 +1816,7 @@ export default class Grid extends Component {
         newFlashCells[i - 10] = true;
         newFlashCells[i + 10] = true;
         newFlashCells[i + 20] = true;
-        newFlashCells[i + 30] = true; 
+        newFlashCells[i + 30] = true;
         this.setState({
           cells: newCells,
           flashCells: newFlashCells
@@ -1837,7 +1842,7 @@ export default class Grid extends Component {
         newFlashCells[i - 10] = true;
         newFlashCells[i + 10] = true;
         newFlashCells[i + 20] = true;
-        newFlashCells[i + 30] = true; 
+        newFlashCells[i + 30] = true;
         this.setState({
           cells: newCells,
           flashCells: newFlashCells
@@ -1863,7 +1868,7 @@ export default class Grid extends Component {
         newFlashCells[i - 10] = true;
         newFlashCells[i + 10] = true;
         newFlashCells[i + 20] = true;
-        newFlashCells[i + 30] = true; 
+        newFlashCells[i + 30] = true;
         this.setState({
           cells: newCells,
           flashCells: newFlashCells
@@ -1889,7 +1894,7 @@ export default class Grid extends Component {
         newFlashCells[i - 10] = true;
         newFlashCells[i + 10] = true;
         newFlashCells[i + 20] = true;
-        newFlashCells[i + 30] = true; 
+        newFlashCells[i + 30] = true;
         this.setState({
           cells: newCells,
           flashCells: newFlashCells
@@ -1915,7 +1920,7 @@ export default class Grid extends Component {
         newFlashCells[i - 10] = true;
         newFlashCells[i + 10] = true;
         newFlashCells[i + 20] = true;
-        newFlashCells[i + 30] = true; 
+        newFlashCells[i + 30] = true;
         this.setState({
           cells: newCells,
           flashCells: newFlashCells
@@ -2885,5 +2890,3 @@ export default class Grid extends Component {
     );
   }
 }
-
-// lightsUp={{ backgroundColor: this.state.color }}
